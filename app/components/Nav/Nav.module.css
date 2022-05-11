@@ -1,0 +1,53 @@
+.wrapper {
+  padding: 20px 16px;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  letter-spacing: 3px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+.centerLinkContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 80%;
+  margin-right: 25px;
+  transition: 300ms;
+  font-weight: 700;
+}
+
+.link:hover {
+  color: var(--red);
+}
+
+.loginBtn {
+  padding: 6px 16px;
+  text-decoration: none;
+  font-size: 80%;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #1a1a1a;
+  background: #d1d1d1;
+}

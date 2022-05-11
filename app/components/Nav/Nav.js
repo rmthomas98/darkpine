@@ -20,7 +20,7 @@ const Nav = () => {
         </div>
         <div className={styles.actionContainer}>
           <Link href="/"><a className={styles.loginBtn}>Log in</a></Link>
-          <Link href="/"><a>Sign up</a></Link>
+          <Link href="/"><a className={styles.signupBtn}>Sign up</a></Link>
         </div>
       </div>
     </div>

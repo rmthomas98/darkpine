@@ -42,12 +42,22 @@
   color: var(--red);
 }
 
-.loginBtn {
-  padding: 6px 16px;
+.loginBtn,
+.signupBtn {
+  padding: 8px 18px;
   text-decoration: none;
-  font-size: 80%;
+  font-size: 75%;
   font-weight: 700;
   border-radius: 5px;
   color: #1a1a1a;
   background: #d1d1d1;
+}
+
+.loginBtn {
+  margin-right: 10px;
+}
+
+.signupBtn {
+  background: var(--red);
+  color: #fff;
 }

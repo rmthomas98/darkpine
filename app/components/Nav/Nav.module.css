@@ -1,6 +1,11 @@
 .wrapper {
   padding: 20px 16px;
   position: relative;
+  border-bottom: 1px solid #c7c7c7;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 9999;
 }
 
 .container {
@@ -18,7 +23,7 @@
   font-size: 100%;
   display: flex;
   align-items: center;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .centerLinkContainer {
@@ -31,33 +36,44 @@
 .link {
   cursor: pointer;
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--black);
   font-size: 80%;
   margin-right: 25px;
   transition: 300ms;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .link:hover {
-  color: var(--red);
+  color: var(--light-green);
 }
 
-.loginBtn,
 .signupBtn {
-  padding: 8px 18px;
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 75%;
-  font-weight: 700;
-  border-radius: 5px;
-  color: #1a1a1a;
-  background: #d1d1d1;
+  font-weight: 600;
+  border-radius: 50px;
+  background: var(--dark-green);
+  color: var(--white);
+  transition: 300ms;
+  position: relative;
+  overflow: hidden;
+}
+
+.signupBtn:hover {
+  background: var(--light-green);
 }
 
 .loginBtn {
-  margin-right: 10px;
+  background: transparent;
+  text-decoration: none;
+  font-size: 80%;
+  font-weight: 600;
+  color: var(--black);
+  margin-right: 25px;
+  transition: 300ms;
 }
 
-.signupBtn {
-  background: var(--red);
-  color: #fff;
+.loginBtn:hover {
+  color: var(--light-green);
 }

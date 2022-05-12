@@ -1,7 +1,7 @@
 import styles from "./Nav.module.css";
 import Link from "next/link";
-import Image from 'next/image'
-import logo from '../../public/assets/images/icicles.svg'
+import Image from 'next/image';
+import logo from '../../public/assets/images/pine-tree.svg';
 
 const Nav = () => {
   return (
@@ -10,7 +10,7 @@ const Nav = () => {
         <Link href="/">
           <a className={styles.title}>
             <Image src={logo} layout="fixed" height={45} width={45}  />
-            <span style={{marginLeft: 10}}>ICICLE</span>
+            <span style={{marginLeft: 10}}>Darkpine</span>
             </a>
         </Link>
         <div className={styles.centerLinkContainer}>
@@ -20,7 +20,7 @@ const Nav = () => {
         </div>
         <div className={styles.actionContainer}>
           <Link href="/"><a className={styles.loginBtn}>Log in</a></Link>
-          <Link href="/"><a className={styles.signupBtn}>Sign up</a></Link>
+          <Link href="/"><a className={styles.signupBtn}>Get started</a></Link>
         </div>
       </div>
     </div>

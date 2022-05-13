@@ -1,11 +1,9 @@
 .wrapper {
-  padding: 125px 16px;
+  padding: 100px 16px;
   background: var(--dark-blue);
-  transform: skewY(2deg);
 }
 
 .container {
-  transform: skewY(-2deg);
   max-width: 1200px;
   margin: auto;
 }
@@ -45,6 +43,7 @@
   color: var(--gray);
   line-height: 1.5;
   text-align: center;
+  font-weight: 500;
 }
 
 .featureContainer {

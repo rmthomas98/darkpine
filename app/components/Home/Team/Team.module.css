@@ -1,0 +1,29 @@
+.wrapper {
+  padding: 75px 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imageContainer {
+  margin-right: 20px;
+}
+
+.title {
+  font-size: 200%;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 95%;
+  max-width: 500px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  line-height: 1.5;
+}

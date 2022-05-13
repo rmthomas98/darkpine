@@ -47,6 +47,8 @@
   border-radius: 50px;
   margin-right: 10px;
   transition: 300ms;
+  min-width: 144px;
+  text-align: center;
 }
 
 .getStartedBtn:hover {

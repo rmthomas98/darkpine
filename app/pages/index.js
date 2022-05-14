@@ -7,6 +7,8 @@ import Task from "../components/Home/Task/Task";
 import Share from "../components/Home/Share/Share";
 import Options from "../components/Home/Options/Options";
 import Faq from "../components/Home/Faq/Faq";
+import Start from "../components/Home/Start/Start";
+import Footer from "../components/Footer/Footer";
 
 const Index = () => {
   return (
@@ -22,6 +24,8 @@ const Index = () => {
       <Share />
       <Options />
       <Faq />
+      <Start />
+      <Footer />
     </>
   );
 };

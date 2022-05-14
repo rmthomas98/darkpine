@@ -1,0 +1,31 @@
+.wrapper {
+  padding: 75px 16px;
+  background: var(--true-black);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  letter-spacing: 3px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin-top: -10px;
+}
+
+.sectionHeader {
+  color: var(--white);
+  font-size: 90%;
+  font-weight: 500;
+}

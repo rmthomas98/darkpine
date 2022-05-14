@@ -48,20 +48,21 @@
 }
 
 .signupBtn {
-  padding: 10px 20px;
+  padding: 8px 20px;
   text-decoration: none;
   font-size: 75%;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 5px;
   background: var(--dark-green);
   color: var(--white);
-  transition: 300ms;
+  transition: background 300ms;
   position: relative;
   overflow: hidden;
 }
 
 .signupBtn:hover {
   background: var(--light-green);
+  color: var(--black);
 }
 
 .loginBtn {

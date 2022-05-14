@@ -43,24 +43,26 @@
   font-size: 85%;
   font-weight: 600;
   text-decoration: none;
-  padding: 10px 24px;
-  border-radius: 50px;
+  padding: 10px 20px;
+  border-radius: 5px;
   margin-right: 10px;
-  transition: 300ms;
-  min-width: 144px;
+  transition: background 300ms;
+  min-width: 140px;
+  max-width: 140px;
   text-align: center;
 }
 
 .getStartedBtn:hover {
   background: var(--light-green);
+  color: var(--black);
 }
 
 .pricingBtn {
-  background: var(--black);
+  background: var(--light-gray);
+  color: var(--black);
 }
 
 .pricingBtn:hover {
-  background: var(--gray);
+  background: var(--dark-blue);
+  color: var(--light-green);
 }
-
-

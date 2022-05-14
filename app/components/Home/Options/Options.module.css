@@ -1,0 +1,80 @@
+.wrapper {
+  padding: 75px 16px;
+  background: var(--dark-blue);
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header {
+  font-size: 200%;
+  font-weight: 600;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 75px;
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.optionContainer {
+  background: var(--black);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin-right: 30px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: var(--white);
+  font-size: 150%;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 90%;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+}
+
+.button {
+  padding: 10px 16px;
+  width: 100%;
+  /* background: var(--white); */
+  border: 2px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 85%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: background 300ms;
+}
+
+.button:hover {
+  background: var(--light-green);
+  border: 2px solid var(--light-green);
+  color: var(--black);
+}

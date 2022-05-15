@@ -16,7 +16,6 @@ const Index = () => {
       <Head>
         <title>Darkpine | Cloud Computing Service</title>
       </Head>
-      <Nav />
       <Top />
       <Info />
       <Team />
@@ -25,7 +24,6 @@ const Index = () => {
       <Options />
       <Faq />
       <Start />
-      <Footer />
     </>
   );
 };

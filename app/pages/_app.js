@@ -1,7 +1,22 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Nav from "../components/Nav/Nav";
+import Footer from "../components/Footer/Footer";
+import { Router, useRouter } from "next/router";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => {
+  const router = useRouter();
 
-export default MyApp
+  if (router.pathname.startsWith("/admin")) {
+    return <Component {...pageProps} />;
+  }
+
+  return (
+    <>
+      <Nav />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
+};
+
+export default MyApp;

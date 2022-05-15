@@ -38,9 +38,9 @@ const Nav = () => {
           <p className={styles.link}>Resources</p>
         </div> */}
         <div className={styles.actionContainer}>
-          {/* <Link href="/">
+          <Link href="/">
             <a className={styles.link}>Plans</a>
-          </Link> */}
+          </Link>
           <Link href="/">
             <a className={styles.loginBtn}>Log in</a>
           </Link>

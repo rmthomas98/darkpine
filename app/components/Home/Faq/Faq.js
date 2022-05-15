@@ -143,7 +143,7 @@ const Faq = () => {
               num === 4 ? styles.appear : styles.dissapear
             }`}
           >
-            Yes. All data has end-to-end encryption using TLS.
+            Data has end-to-end encryption using TLS.
           </p>
         </div>
         <div
@@ -169,7 +169,7 @@ const Faq = () => {
               num === 5 ? styles.appear : styles.dissapear
             }`}
           >
-            Yes. You can share your files with anyone you wish.
+            You can share your files with anyone.
           </p>
         </div>
       </div>

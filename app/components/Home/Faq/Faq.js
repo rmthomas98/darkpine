@@ -91,7 +91,7 @@ const Faq = () => {
               num === 2 ? styles.appear : styles.dissapear
             }`}
           >
-            We offer up to 4GB for free for individual use.
+            We offer up to 15GB for free for individual use.
           </p>
         </div>
         <div

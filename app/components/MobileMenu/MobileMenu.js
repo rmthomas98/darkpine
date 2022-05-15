@@ -40,7 +40,7 @@ const MobileMenu = ({ isActive, setIsActive }) => {
         </Link> */}
         <Link href="/">
           <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
-            Plans
+            Contact
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>

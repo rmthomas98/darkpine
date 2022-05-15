@@ -2,7 +2,6 @@ import styles from "./Top.module.css";
 import Image from "next/image";
 import computer from "../../../public/assets/images/computer_cloud.svg";
 import Link from "next/link";
-import { useWindowWidth } from "@react-hook/window-size";
 
 const Top = () => {
   return (
@@ -14,11 +13,11 @@ const Top = () => {
             Access all of your files from any device.
           </p>
           <div className={styles.buttonContainer}>
-            <Link href="/">
+            <Link href="/plans">
               <a className={styles.getStartedBtn}>Get started</a>
             </Link>
             <Link href="/">
-              <a className={styles.pricingBtn}>View plans</a>
+              <a className={styles.pricingBtn}>Contact</a>
             </Link>
           </div>
         </div>

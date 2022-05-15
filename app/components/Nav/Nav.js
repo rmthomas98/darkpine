@@ -39,7 +39,7 @@ const Nav = () => {
         </div> */}
         <div className={styles.actionContainer}>
           <Link href="/">
-            <a className={styles.link}>Plans</a>
+            <a className={styles.link}>Contact</a>
           </Link>
           <Link href="/">
             <a className={styles.loginBtn}>Log in</a>

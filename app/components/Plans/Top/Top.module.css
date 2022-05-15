@@ -1,0 +1,22 @@
+.wrapper {
+  padding: 75px 16px;
+}
+
+.forestBackground {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+}
+
+.header {
+  font-size: 250%;
+  font-weight: 800;
+  text-align: center;
+}
+
+.subHeader {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 90%;
+}

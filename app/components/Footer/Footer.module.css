@@ -1,5 +1,6 @@
 .wrapper {
   padding: 75px 16px;
+  padding-right: 30px;
   background: var(--true-black);
 }
 
@@ -11,6 +12,7 @@
 .flexContainer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .title {
@@ -28,4 +30,31 @@
   color: var(--white);
   font-size: 90%;
   font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.about,
+.support,
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  font-size: 70%;
+  color: var(--gray);
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: var(--light-green);
+}
+
+.copyright {
+  font-size: 65%;
+  color: var(--mid-gray);
+  margin-top: 20px;
+  padding-left: 10px;
 }

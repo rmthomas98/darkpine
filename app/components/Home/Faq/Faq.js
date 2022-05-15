@@ -8,7 +8,7 @@ const Faq = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <p className={styles.header}>Take a look into our faq.</p>
-        <div
+        {/* <div
           className={styles.questionContainer}
           style={{
             borderTop: "1px solid #b5c0be",
@@ -36,10 +36,11 @@ const Faq = () => {
             your files on any device. Collab, share, assign tasks, create a
             team, and so much more with the power of Darkpine.
           </p>
-        </div>
+        </div> */}
         <div
           className={styles.questionContainer}
           style={{
+            borderTop: "1px solid #b5c0be",
             height: num === 1 ? 116 : 75,
           }}
           onClick={() => (num === 1 ? setNum(0) : setNum(1))}

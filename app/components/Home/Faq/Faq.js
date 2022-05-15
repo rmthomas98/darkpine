@@ -74,7 +74,9 @@ const Faq = () => {
           onClick={() => (num === 2 ? setNum(0) : setNum(2))}
         >
           <div className={styles.question}>
-            <p className={styles.questionP}>How much free space do we offer?</p>
+            <p className={styles.questionP}>
+              How much free storage do we offer?
+            </p>
             <div className={styles.boxContainer}>
               <div
                 className={`${styles.vertical} ${
@@ -100,9 +102,7 @@ const Faq = () => {
           onClick={() => (num === 3 ? setNum(0) : setNum(3))}
         >
           <div className={styles.question}>
-            <p className={styles.questionP}>
-              What is the max amount of space we offer?
-            </p>
+            <p className={styles.questionP}>How much storage do we offer?</p>
             <div className={styles.boxContainer}>
               <div
                 className={`${styles.vertical} ${
@@ -154,9 +154,7 @@ const Faq = () => {
           onClick={() => (num === 5 ? setNum(0) : setNum(5))}
         >
           <div className={styles.question}>
-            <p className={styles.questionP}>
-              Can I share my files with someone that isn&#39;t a Darkpine user?
-            </p>
+            <p className={styles.questionP}>Who can I share my files with?</p>
             <div className={styles.boxContainer}>
               <div
                 className={`${styles.vertical} ${

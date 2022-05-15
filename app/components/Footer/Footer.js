@@ -10,7 +10,13 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.flexContainer}>
           <div className={styles.title}>
-            <Image src={logo} layout="fixed" height={45} width={45} />
+            <Image
+              src={logo}
+              layout="fixed"
+              height={45}
+              width={45}
+              alt="pine tree logo"
+            />
             <p style={{ marginLeft: 10 }}>Darkpine</p>
           </div>
           <div className={styles.about}>

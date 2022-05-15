@@ -78,3 +78,21 @@
 .loginBtn:hover {
   color: var(--light-green);
 }
+
+.burger {
+  display: none;
+  color: var(--black);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .centerLinkContainer {
+    display: none;
+  }
+  .actionContainer {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}

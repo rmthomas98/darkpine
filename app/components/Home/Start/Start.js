@@ -21,7 +21,7 @@ const Start = () => {
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={start} height={400} width={400} />
+          <Image src={start} height={400} width={400} alt="start now" />
         </div>
       </div>
     </div>

@@ -13,7 +13,12 @@ const Options = () => {
         <div className={styles.flexContainer}>
           <div className={styles.optionContainer}>
             <div className={styles.imageContainer}>
-              <Image src={individual} height={350} width={350} />
+              <Image
+                src={individual}
+                height={350}
+                width={350}
+                alt="personal use"
+              />
             </div>
             <p className={styles.title}>Individual Use</p>
             <p className={styles.description}>
@@ -32,7 +37,7 @@ const Options = () => {
           </div>
           <div className={styles.optionContainer} style={{ marginRight: 0 }}>
             <div className={styles.imageContainer}>
-              <Image src={work} height={350} width={350} />
+              <Image src={work} height={350} width={350} alt="work use" />
             </div>
             <p className={styles.title}>Business Use</p>
             <p className={styles.description}>

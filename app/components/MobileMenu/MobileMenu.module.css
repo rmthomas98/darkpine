@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--white);
+  height: 100vh;
+  box-shadow: 0px 0px 10px #0000005d;
+  transition: 300ms;
+}
+
+.exitContainer {
+  padding: 29.5px 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  color: var(--true-black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--mid-gray);
+  font-size: 90%;
+  font-weight: 600;
+  padding: 10px;
+  transition: 300ms;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.link:hover {
+  background: var(--dark-green);
+  color: var(--white);
+}
+
+.arrow {
+  opacity: 0;
+  color: #fff;
+  transform: translateX(-10px);
+  transition: 300ms;
+}
+
+.link:hover .arrow {
+  opacity: 1;
+  transform: translateX(10px);
+}

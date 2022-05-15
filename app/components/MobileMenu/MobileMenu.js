@@ -51,12 +51,6 @@ const MobileMenu = ({ isActive, setIsActive }) => {
           </a>
         </Link>
         <Link href="/">
-          <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
-            Log in
-            <HiArrowSmRight className={styles.arrow} size={20} />
-          </a>
-        </Link>
-        <Link href="/">
           <a
             className={styles.link}
             style={{

@@ -45,18 +45,23 @@ const Nav = () => {
             <a className={styles.signupBtn}>Get started</a>
           </Link>
         </div>
-        <div className={styles.burger}>
-          <MdOutlineMenu
-            onClick={() => setIsActive(true)}
-            size={26}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          />
+        <div className={styles.mobileActionContainer}>
+          <Link href="/">
+            <a className={styles.loginBtnMobile}>Log in</a>
+          </Link>
+          <div className={styles.burger}>
+            <MdOutlineMenu
+              onClick={() => setIsActive(true)}
+              size={26}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            />
+          </div>
+          <MobileMenu isActive={isActive} setIsActive={setIsActive} />
         </div>
-        <MobileMenu isActive={isActive} setIsActive={setIsActive} />
       </div>
     </div>
   );

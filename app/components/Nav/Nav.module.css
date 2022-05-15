@@ -47,7 +47,8 @@
   color: var(--light-green);
 }
 
-.signupBtn {
+.signupBtn,
+.loginBtnMobile {
   padding: 8px 20px;
   text-decoration: none;
   font-size: 75%;
@@ -60,7 +61,12 @@
   overflow: hidden;
 }
 
-.signupBtn:hover {
+.loginBtnMobile {
+  padding: 6px 20px;
+}
+
+.signupBtn:hover,
+.loginBtnMobile:hover {
   background: var(--light-green);
   color: var(--black);
 }
@@ -80,9 +86,13 @@
 }
 
 .burger {
-  display: none;
   color: var(--black);
   cursor: pointer;
+  margin-left: 10px;
+}
+
+.mobileActionContainer {
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -92,7 +102,8 @@
   .actionContainer {
     display: none;
   }
-  .burger {
-    display: block;
+  .mobileActionContainer {
+    display: flex;
+    align-items: center;
   }
 }

@@ -18,7 +18,7 @@ const Top = () => {
               <a className={styles.getStartedBtn}>Get started</a>
             </Link>
             <Link href="/">
-              <a className={styles.pricingBtn}>View pricing</a>
+              <a className={styles.pricingBtn}>View plans</a>
             </Link>
           </div>
         </div>

@@ -32,21 +32,21 @@ const MobileMenu = ({ isActive, setIsActive }) => {
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
-        <Link href="/">
+        {/* <Link href="/">
           <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
             Product
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
-        </Link>
+        </Link> */}
         <Link href="/">
           <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
-            Pricing
+            Plans
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
         <Link href="/">
           <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
-            Resources
+            Log in
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>

@@ -113,3 +113,24 @@
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .header {
+    font-size: 150%;
+  }
+  .subHeader {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .question {
+    font-size: 80%;
+  }
+  .answer {
+    font-size: 68%;
+  }
+  .header {
+    font-size: 130%;
+  }
+}

@@ -27,3 +27,33 @@
   color: var(--dark-gray);
   line-height: 1.5;
 }
+
+@media screen and (max-width: 700px) {
+  .title {
+    font-size: 150%;
+  }
+  .description {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .imageContainer {
+    margin-right: 0px;
+  }
+  .wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 130%;
+  }
+  .description {
+    font-size: 75%;
+  }
+}

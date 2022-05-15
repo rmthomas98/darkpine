@@ -37,7 +37,10 @@ const Info = () => {
               search tool.
             </p>
           </div>
-          <div className={styles.featureContainer}>
+          <div
+            className={styles.featureContainer}
+            style={{ marginRight: 0, marginBottom: 0 }}
+          >
             <Image
               src={secureFiles}
               height={140}

@@ -50,3 +50,33 @@
   background: transparent;
   color: var(--white);
 }
+
+@media screen and (max-width: 800px) {
+  .header {
+    font-size: 200%;
+  }
+  .description {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .imageContainer {
+    margin-bottom: 20px;
+  }
+  .infoContainer {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    font-size: 150%;
+  }
+  .subHeader {
+    font-size: 70%;
+  }
+}

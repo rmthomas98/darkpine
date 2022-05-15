@@ -9,7 +9,7 @@ const Options = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <p className={styles.header}>What can Darkpine be used for?</p>
+        <p className={styles.header}>How can Darkpine be used?</p>
         <div className={styles.flexContainer}>
           <div className={styles.optionContainer}>
             <div className={styles.imageContainer}>
@@ -35,7 +35,10 @@ const Options = () => {
               </Link>
             </div>
           </div>
-          <div className={styles.optionContainer} style={{ marginRight: 0 }}>
+          <div
+            className={styles.optionContainer}
+            style={{ marginRight: 0, marginBottom: 0 }}
+          >
             <div className={styles.imageContainer}>
               <Image src={work} height={350} width={350} alt="work use" />
             </div>

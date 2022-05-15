@@ -2,6 +2,7 @@ import styles from "./Top.module.css";
 import Image from "next/image";
 import computer from "../../../public/assets/images/computer_cloud.svg";
 import Link from "next/link";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const Top = () => {
   return (

@@ -78,3 +78,43 @@
   border: 2px solid var(--light-green);
   color: var(--black);
 }
+
+@media screen and (max-width: 700px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+  .optionContainer {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    font-size: 150%;
+  }
+  .title {
+    font-size: 130%;
+  }
+  .subHeader {
+    font-size: 85%;
+  }
+  .description {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    font-size: 130%;
+  }
+  .title {
+    font-size: 110%;
+  }
+  .description {
+    font-size: 75%;
+  }
+  .button {
+    border: 1px solid var(--white);
+  }
+}

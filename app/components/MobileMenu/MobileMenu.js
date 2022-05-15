@@ -17,40 +17,52 @@ const MobileMenu = ({ isActive, setIsActive }) => {
             size={26}
             style={{ cursor: "pointer" }}
             onClick={() => setIsActive(false)}
+            color="var(--white)"
           />
         </div>
         <Link href="/">
-          <a className={styles.link} style={{ borderTop: "1px solid #b5c0be" }}>
+          <a
+            className={styles.link}
+            style={{
+              borderTop: "1px solid #ffffff18",
+              opacity: isActive ? 1 : 0,
+            }}
+          >
             Home
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
         <Link href="/">
-          <a className={styles.link}>
+          <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
             Product
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
         <Link href="/">
-          <a className={styles.link}>
+          <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
             Pricing
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
         <Link href="/">
-          <a className={styles.link}>
+          <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
             Resources
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
         <Link href="/">
-          <a className={styles.link}>
+          <a className={styles.link} style={{ opacity: isActive ? 1 : 0 }}>
             Log in
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>
         </Link>
         <Link href="/">
-          <a className={styles.link}>
+          <a
+            className={styles.link}
+            style={{
+              opacity: isActive ? 1 : 0,
+            }}
+          >
             Get started
             <HiArrowSmRight className={styles.arrow} size={20} />
           </a>

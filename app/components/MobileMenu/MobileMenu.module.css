@@ -7,12 +7,13 @@
   z-index: 9999;
   background: var(--white);
   height: 100vh;
-  box-shadow: 0px 0px 10px #0000005d;
+  box-shadow: 0px 0px 10px var(--light-green);
   transition: 300ms;
+  background: #000000e5;
 }
 
 .exitContainer {
-  padding: 29.5px 16px;
+  padding: 20px 16px;
   display: flex;
   justify-content: flex-end;
 }
@@ -20,25 +21,27 @@
 .link {
   color: var(--true-black);
   text-decoration: none;
-  border-bottom: 1px solid var(--mid-gray);
-  font-size: 90%;
-  font-weight: 600;
+  border-bottom: 1px solid #ffffff18;
+  font-size: 80%;
+  font-weight: 400;
   padding: 10px;
   transition: 300ms;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-right: 30px;
+  transition: 300ms;
+  transition-delay: 300ms;
+  color: var(--white);
 }
 
 .link:hover {
-  background: var(--dark-green);
   color: var(--white);
 }
 
 .arrow {
   opacity: 0;
-  color: #fff;
+  color: var(--white);
   transform: translateX(-10px);
   transition: 300ms;
 }

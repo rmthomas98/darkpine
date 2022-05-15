@@ -66,3 +66,34 @@
   background: var(--dark-blue);
   color: var(--light-green);
 }
+
+@media screen and (max-width: 800px) {
+  .subHeader {
+    font-size: 80%;
+  }
+
+  .header {
+    font-size: 200%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .wrapper {
+    padding-top: 50px;
+  }
+  .imageContainer {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    font-size: 150%;
+  }
+  .subHeader {
+    font-size: 70%;
+  }
+}

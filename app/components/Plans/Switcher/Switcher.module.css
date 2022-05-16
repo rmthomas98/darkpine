@@ -1,6 +1,76 @@
 .wrapper {
-  padding: 50px 16px;
+  padding: 0px 16px;
+  padding-bottom: 50px;
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 280px;
+  margin: auto;
 }
+
+.switch  {
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  background: var(--true-black);
+  position: relative;
+  cursor: pointer;
+}
+
+.ball {
+  height: 15px;
+  width: 15px;
+  background: var(--light-green);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label {
+  font-size: 110%;
+  font-weight: 600;
+}
+
+.toRight {
+  animation: toRight 600ms forwards;
+}
+
+.toLeft {
+  animation: toLeft 600ms forwards;
+}
+
+@keyframes toLeft {
+  0% {
+    right: 8%;
+    border-radius: 50px;
+  }
+  20% {
+    width: 25px;
+  }
+  100% {
+    right: 55%;
+    border-radius: 50%;
+    width: 15px;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    left: 8%;
+    border-radius: 50px;
+  }
+  20% {
+    width: 25px;
+  }
+  100% {
+    left: 55%;
+    width: 15px;
+    border-radius: 50%;
+  }
+}
+
+

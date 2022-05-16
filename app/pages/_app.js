@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Nav from "../components/Nav/Nav";
 import Footer from "../components/Footer/Footer";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();

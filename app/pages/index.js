@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Nav from "../components/Nav/Nav";
 import Top from "../components/Home/Top/Top";
 import Info from "../components/Home/Info/Info";
 import Team from "../components/Home/Team/Team";
@@ -8,7 +7,6 @@ import Share from "../components/Home/Share/Share";
 import Options from "../components/Home/Options/Options";
 import Faq from "../components/Home/Faq/Faq";
 import Start from "../components/Home/Start/Start";
-import Footer from "../components/Footer/Footer";
 
 const Index = () => {
   return (

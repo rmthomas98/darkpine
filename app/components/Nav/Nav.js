@@ -30,22 +30,15 @@ const Nav = () => {
             <span style={{ marginLeft: 10 }}>Darkpine</span>
           </a>
         </Link>
-        {/* <div className={styles.centerLinkContainer}>
-          <p className={styles.link}>Product</p>
-          <Link href="/">
-            <a className={styles.link}>Pricing</a>
-          </Link>
-          <p className={styles.link}>Resources</p>
-        </div> */}
         <div className={styles.actionContainer}>
           <Link href="/">
             <a className={styles.link}>Contact</a>
           </Link>
           <Link href="/">
-            <a className={styles.loginBtn}>Log in</a>
+            <a className={styles.link}>Log in</a>
           </Link>
           <Link href="/">
-            <a className={styles.signupBtn}>Get started</a>
+            <a className={styles.signupBtn} >Get started</a>
           </Link>
         </div>
         <div className={styles.mobileActionContainer}>

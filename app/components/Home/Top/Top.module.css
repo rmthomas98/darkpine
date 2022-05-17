@@ -38,33 +38,36 @@
 
 .getStartedBtn,
 .pricingBtn {
-  background: var(--dark-green);
+  box-shadow: 0px 3px 10px var(--pink);
+  background: var(--pink);
   color: var(--white);
   font-size: 85%;
   font-weight: 600;
   text-decoration: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-right: 10px;
-  transition: background 300ms;
+  transition: 300ms;
   min-width: 140px;
   max-width: 140px;
   text-align: center;
+  transition: 300ms;
 }
 
 .getStartedBtn:hover {
-  background: var(--light-green);
-  color: var(--black);
+  transform: scale(0.95);
+  box-shadow: 0px 4px 20px var(--pink);
 }
 
 .pricingBtn {
   background: var(--light-gray);
   color: var(--black);
+  box-shadow: none;
 }
 
 .pricingBtn:hover {
-  background: var(--dark-blue);
-  color: var(--light-green);
+  color: var(--pink);
+  box-shadow: 0px 4px 20px var(--gray);
 }
 
 @media screen and (max-width: 800px) {

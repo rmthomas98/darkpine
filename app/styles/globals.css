@@ -42,8 +42,8 @@
 :root {
   --dark-blue: #001e2b;
   --dark-green: #00684a;
-  --light-green: #00db9d;
-  --pink: #f5478a;
+  --light-green: #06ce95;
+  --gold: #ffc16f;
   --black: #061621;
   --true-black: #000;
   --gray: #99a3a1;
@@ -51,12 +51,14 @@
   --dark-gray: #707776;
   --light-gray: #dce6e4;
   --white: #f5f6f7;
+  --shadow: #d3d3d3;
+  --gray-tint: #f1f1f1;
 }
 
 html,
 body {
   font-size: 20px;
-  color: var(--true-black);
+  color: var(--black);
   background: var(--white);
   font-family: "Gilroy", sans-serif;
 }

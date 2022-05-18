@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 100px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0px 20px 40px var(--shadow);
+  display: flex;
+}

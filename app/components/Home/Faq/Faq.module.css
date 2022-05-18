@@ -21,7 +21,7 @@
 }
 
 .questionContainer:hover {
-  background: var(--light-gray);
+  background: var(--dark-gray-tint);
 }
 
 .question {

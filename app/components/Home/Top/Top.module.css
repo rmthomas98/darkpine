@@ -55,12 +55,12 @@
 }
 
 .getStartedBtn:hover {
-  transform: scale(0.95);
+  transform: scale(0.97);
   box-shadow: 0px 4px 20px var(--light-green);
 }
 
 .pricingBtn {
-  background: var(--light-gray);
+  background: var(--dark-gray-tint);
   color: var(--black);
   box-shadow: none;
 }

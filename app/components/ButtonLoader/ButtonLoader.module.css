@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ballOne,
+.ballTwo,
+.ballThree {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--white);
+  margin-right: 6px;
+}
+
+.ballOne {
+  animation: bounce 1s linear infinite;
+}
+
+.ballTwo {
+  animation: bounce 1s linear infinite;
+  animation-delay: 150ms;
+}
+
+.ballThree {
+  animation: bounce 1s linear infinite;
+  animation-delay: 300ms;
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}

@@ -70,13 +70,14 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  transition: background 300ms;
+  transition: 300ms;
 }
 
 .button:hover {
-  background: var(--light-green);
-  border: 2px solid var(--light-green);
-  color: var(--black);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  color: var(--white);
+  box-shadow: 0px 2px 16px var(--gold);
 }
 
 @media screen and (max-width: 700px) {

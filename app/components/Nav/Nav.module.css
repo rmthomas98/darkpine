@@ -64,13 +64,13 @@
 }
 
 .signupBtn:hover {
-  transform: scale(0.95);
+  transform: scale(0.97);
   box-shadow: 0px 4px 20px var(--light-green);
 }
 
 .loginBtnMobile:hover {
-  transform: scale(0.95);
-  box-shadow: 0px 4px 20px var(--pink);
+  transform: scale(0.97);
+  box-shadow: 0px 4px 20px var(--light-green);
 }
 
 .burger {

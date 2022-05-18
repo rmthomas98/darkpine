@@ -1,0 +1,143 @@
+.wrapper {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+}
+
+.title {
+  font-size: 120%;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 100%;
+}
+
+.nameContainer {
+  display: flex;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.firstNameContainer {
+  margin-right: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 11px 10px;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 700;
+  color: var(--black);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px var(--shadow);
+  transition: 300ms;
+  background: #fff;
+}
+
+.input:focus,
+.input:hover {
+  box-shadow: 0px 4px 18px var(--shadow);
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-weight: 600;
+  font-size: 70%;
+  transition: 300ms;
+  pointer-events: none;
+}
+
+.filled {
+  top: -2px;
+  font-size: 60%;
+  background: var(--black);
+  color: var(--white);
+  left: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  position: absolute;
+  transform: translateY(-50%);
+  border-radius: 4px;
+}
+
+.inputContainer:focus-within .label {
+  top: -2px;
+  font-size: 60%;
+  background: var(--black);
+  color: var(--white);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.planSelectionContainer {
+  margin-top: 10px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px var(--shadow);
+  position: absolute;
+  overflow: hidden;
+  transition: 400ms;
+}
+
+.planSelected,
+.selection {
+  font-size: 70%;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selection {
+  justify-content: flex-start;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.submitBtn {
+  padding: 12px;
+  width: 100%;
+  background: var(--light-green);
+  border: none;
+  border-radius: 6px;
+  font-family: "Gilroy", sans-serif;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 75%;
+  cursor: pointer;
+  box-shadow: 0px 2px 10px var(--light-green);
+  transition: 300ms;
+  height: 42px;
+}
+
+.submitBtn:hover {
+  box-shadow: 0px 4px 20px var(--light-green);
+  transform: scale(0.97);
+}
+
+.error {
+  position: absolute;
+  margin-top: 4px;
+  font-size: 60%;
+  color: red;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: 300ms;
+  pointer-events: none;
+}

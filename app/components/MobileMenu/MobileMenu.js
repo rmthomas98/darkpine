@@ -17,14 +17,13 @@ const MobileMenu = ({ isActive, setIsActive }) => {
             size={26}
             style={{ cursor: "pointer" }}
             onClick={() => setIsActive(false)}
-            color="var(--white)"
+            color="var(--black)"
           />
         </div>
         <Link href="/">
           <a
             className={styles.link}
             style={{
-              borderTop: "1px solid #ffffff18",
               opacity: isActive ? 1 : 0,
             }}
           >

@@ -8,7 +8,6 @@
   background: var(--white);
   height: 100vh;
   transition: 300ms;
-  background: #000000e5;
 }
 
 .exitContainer {
@@ -20,27 +19,25 @@
 .link {
   color: var(--true-black);
   text-decoration: none;
-  border-bottom: 1px solid #ffffff18;
-  font-size: 80%;
-  font-weight: 400;
-  padding: 10px;
+  font-size: 85%;
+  font-weight: 600;
+  padding: 12px;
   transition: 300ms;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-right: 30px;
   transition: 300ms;
-  transition-delay: 300ms;
-  color: var(--white);
+  color: var(--black);
 }
 
 .link:hover {
-  color: var(--white);
+  color: var(--gold);
 }
 
 .arrow {
   opacity: 0;
-  color: var(--white);
+  color: var(--gold);
   transform: translateX(-10px);
   transition: 300ms;
 }

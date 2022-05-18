@@ -10,6 +10,15 @@ const MyApp = ({ Component, pageProps }) => {
     return <Component {...pageProps} />;
   }
 
+  if (router.pathname.endsWith('/signup') || router.pathname.endsWith('/login')) {
+    return (
+      <>
+        <Nav />
+        <Component {...pageProps} />      
+      </>
+    )
+  }
+
   return (
     <>
       <Nav />

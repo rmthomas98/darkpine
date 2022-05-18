@@ -10,12 +10,9 @@ const Team = () => {
           <Image src={TeamPicture} height={450} width={450} alt="create team" />
         </div>
         <div className={styles.infoContainer}>
-          <p className={styles.title}>Create a Team</p>
+          <p className={styles.title}>Unlimited Device Access</p>
           <p className={styles.description}>
-            Collaboration at it&#39;s finest. Create a shared workspace making
-            file sharing even easier. See when someone makes change to a file.
-            Give certain roles to each person to allow what they can do within
-            the organization.
+            You won&#39; be limited to only accessing your files on a single device. Access your files on any device from anywhere in the world, at anytime you want.
           </p>
         </div>
       </div>

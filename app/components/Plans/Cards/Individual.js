@@ -38,7 +38,12 @@ const Individual = ({ plans }) => {
             Auto Backup
           </div>
           <div className={styles.buttonContainer}>
-            <Link href="/signup">
+            <Link href={{
+              pathname: '/signup',
+              query: {
+                subscription: 1
+              } 
+            }}>
               <a className={styles.selectPlanBtn}>Select Plan</a>
             </Link>
           </div>
@@ -85,7 +90,12 @@ const Individual = ({ plans }) => {
             Pine lock
           </div>
           <div className={styles.buttonContainer}>
-            <Link href="/signup">
+          <Link href={{
+              pathname: '/signup',
+              query: {
+                subscription: 2
+              }
+            }}>
               <a className={styles.selectPlanBtn}>Select Plan</a>
             </Link>
           </div>
@@ -136,7 +146,12 @@ const Individual = ({ plans }) => {
             Shared Folders
           </div>
           <div className={styles.buttonContainer}>
-            <Link href="/signup">
+          <Link href={{
+              pathname: '/signup',
+              query: {
+                subscription: 3
+              }
+            }}>
               <a className={styles.selectPlanBtn}>Select Plan</a>
             </Link>
           </div>

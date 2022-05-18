@@ -7,12 +7,9 @@ const Task = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.infoContainer}>
-          <p className={styles.title}>Assign Tasks</p>
+          <p className={styles.title}>Pine Lock</p>
           <p className={styles.description}>
-            Create tasks for things you want to get done. You will also have the
-            ability of assigning people within your organization to each task
-            you make. Get notified when tasks get submitted for approval by the
-            team leaders.
+            Pine lock is a special feature that allows you to store your most important files in a special place within the app that is protected by any password that you want.
           </p>
         </div>
         <div className={styles.imageContainer}>

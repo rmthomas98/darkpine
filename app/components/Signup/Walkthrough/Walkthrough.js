@@ -1,6 +1,6 @@
 import styles from './Walkthrough.module.css'
 
-const Walkthrough = () => {
+const Walkthrough = ({accountInfo, step}) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>

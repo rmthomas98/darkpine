@@ -6,8 +6,9 @@ import { BsCheckLg } from "react-icons/bs";
 import { useRouter } from "next/router";
 import ButtonLoader from "../../ButtonLoader/ButtonLoader";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
-const SignupForm = ({ accountInfo, setAccountInfo }) => {
+const SignupForm = ({ setAccountInfo, setStep }) => {
   const {
     watch,
     register,
@@ -22,12 +23,29 @@ const SignupForm = ({ accountInfo, setAccountInfo }) => {
   const [isLoading, setIsLoading] = useState(false);
   // plan selected to display in words
   const [selectedPlan, setSelectedPlan] = useState();
-  // message if email has been taken
-  const [email, setEmail] = useState(false);
   // state to update inner button content
   const [buttonContent, setButtonContent] = useState();
   // router
   const router = useRouter();
+
+  // set up toast
+  const errorMessage = () =>
+    toast.error("Something went wrong.", {
+      style: {
+        fontSize: "14px",
+        fontWeight: 700,
+      },
+      duration: 5000,
+    });
+
+  const emailErrorMessage = () =>
+    toast.error("Email already in use.", {
+      style: {
+        fontSize: "14px",
+        fontWeight: 700,
+      },
+      duration: 5000,
+    });
 
   useEffect(() => {
     if (plan == 1) return setButtonContent("Create account");
@@ -36,16 +54,40 @@ const SignupForm = ({ accountInfo, setAccountInfo }) => {
 
   // function that runs on form submission
   const onSubmit = async (data) => {
+    setIsLoading(true);
     if (plan !== 1) {
-      setAccountInfo({ data, plan: plan });
+      const response = await axios.post('/api/signup/setup-intent', data);
+      if (response.data === 'email in use'){
+        setIsLoading(false)
+        return emailErrorMessage()
+      } else if (response.data === 'error') {
+        setIsLoading(false)
+        return errorMessage()
+      }
+      // if no errors
+      // set account info and go to payment 
+      setAccountInfo({ data, plan, clientSecret: response.data.clientSecret, setupIntentId: response.data.setupIntentId});
+      setStep(2);
+      setIsLoading(false)
     } else {
       // create free account no need for payment details
       // make call to backend and then redirect to login page
-      setIsLoading(true);
-      const response = await axios.post("/api/create-customer", {
-        data,
-        plan,
-      });
+      const response = await axios.post("/api/signup/free-signup", data);
+      switch (response?.data) {
+        case "success":
+          router.push({ pathname: "/login", query: "newAccount" });
+          break;
+        case "email in use":
+          emailErrorMessage();
+          setIsLoading(false);
+          break;
+        case "error":
+          errorMessage();
+          setIsLoading(false);
+          break;
+        default:
+          return;
+      }
     }
   };
 
@@ -73,6 +115,7 @@ const SignupForm = ({ accountInfo, setAccountInfo }) => {
 
   return (
     <div className={styles.wrapper}>
+      <Toaster />
       <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
         <p className={styles.title}>Account Information</p>
         <div className={styles.nameContainer}>

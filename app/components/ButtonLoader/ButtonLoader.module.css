@@ -4,39 +4,54 @@
   align-items: center;
 }
 
-.ballOne,
-.ballTwo,
-.ballThree {
-  height: 5px;
-  width: 5px;
+.outerCircle,
+.innerCircle {
+  position: absolute;
+}
+
+.outerCircle {
+  height: 18px;
+  width: 18px;
+  border-top: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1.5s ease infinite;
+}
+
+.innerCircle {
+  height: 10px;
+  width: 10px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid var(--white);
+  border-left: 2px solid var(--white);
+  border-radius: 50%;
+  animation: spinReverse 1.5s linear infinite;
+}
+
+/* .ball {
+  height: 2px;
+  width: 2px;
   border-radius: 50%;
   background: var(--white);
-  margin-right: 6px;
-}
+} */
 
-.ballOne {
-  animation: bounce 1s linear infinite;
-}
-
-.ballTwo {
-  animation: bounce 1s linear infinite;
-  animation-delay: 150ms;
-}
-
-.ballThree {
-  animation: bounce 1s linear infinite;
-  animation-delay: 300ms;
-}
-
-
-@keyframes bounce {
-  0% {
-    transform: translateY(4px);
+@keyframes spin {
+  from {
+    transform: rotate(0);
   }
-  50% {
-    transform: translateY(-4px);
+  to {
+    transform: rotate(720deg);
   }
-  100% {
-    transform: translateY(4px);
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
   }
 }

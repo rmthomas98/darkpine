@@ -34,8 +34,8 @@ const handler = async (req, res) => {
         {
           price:
             plan === 2
-              ? "price_1L1HzcKaq8wh20bLBmvj5TEj"
-              : "price_1L1I02Kaq8wh20bLMNfVoZYN",
+              ? "price_1L1FSdCujKXJKQzqzfiXezDx"
+              : "price_1L1FT7CujKXJKQzqBXNmW6re",
         },
       ],
       default_payment_method: paymentMethod,

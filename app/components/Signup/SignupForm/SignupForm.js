@@ -75,7 +75,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
       const response = await axios.post("/api/signup/free-signup", data);
       switch (response?.data) {
         case "success":
-          router.push({ pathname: "/login", query: "newAccount" });
+          router.push({ pathname: "/login", query: {newAccount: true} });
           break;
         case "email in use":
           emailErrorMessage();

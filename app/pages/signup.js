@@ -1,11 +1,12 @@
 import { useState } from "react";
 import SignupContainer from "../components/Signup/SignupContainer/SignupContainer";
 
-const Signup = (props) => {
+const Signup = () => {
 
   return (
     <SignupContainer />
   )
+
 }
 
 export default Signup;

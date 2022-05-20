@@ -60,11 +60,12 @@ const handler = async (req, res) => {
       resetPasswordLink: null
     };
 
-    // // insert customer into monogdb
-    // await collection.insertOne(newCustomer)
+    // insert customer into monogdb
+    await collection.insertOne(newCustomer)
 
-    // // send success message to front end
-    // res.status(200).send('success')
+    // send success message to front end
+    res.status(200).send('success')
+    
   } catch {
     res.status(500).send("error");
   }

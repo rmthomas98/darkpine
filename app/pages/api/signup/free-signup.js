@@ -35,13 +35,11 @@ const handler = async (req, res) => {
       cancelAtPeriodEnd: false,
       plan: "free",
       paymentStatus: null,
-      paymentMethod: null,
       cardDetails: null,
       nextInvoice: null,
       invoices: null,
       isActive: true,
       resetPasswordLink: null,
-      setupIntentId: null
     };
 
     // insert document into mongodb

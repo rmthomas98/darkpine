@@ -16,7 +16,6 @@ const handler = async (req, res) => {
 
     // retreive setupIntent
     const setupIntent = await stripe.setupIntents.retrieve(setupIntentId);
-
     // get payment method
     const paymentMethod = setupIntent.payment_method;
 
@@ -25,6 +24,9 @@ const handler = async (req, res) => {
       name: `${first.trim()} ${last.trim()}`,
       email: email,
       payment_method: paymentMethod,
+      invoice_settings: {
+        default_payment_method: paymentMethod
+      }
     });
 
     // create subscription
@@ -38,28 +40,25 @@ const handler = async (req, res) => {
               : "price_1L1FT7CujKXJKQzqBXNmW6re",
         },
       ],
-      default_payment_method: paymentMethod,
     });
 
-    // // create mongodb customer
-    // const newCustomer = {
-    //   firstName: first.trim(),
-    //   lastName: last.trim(),
-    //   email: email.trim(),
-    //   password: bcrypt.hashSync(password),
-    //   customerId: customer.id,
-    //   subscriptionId: subscription.id,
-    //   cancelAtPeriodEnd: false,
-    //   plan: plan === 2 ? 'standard' : 'premium',
-    //   paymentStatus: paid,
-    //   paymentMethod: paymentMethod,
-    //   cardDetails: null,
-    //   nextInvoice: null,
-    //   invoices: null,
-    //   isActive: true,
-    //   resetPasswordLink: null,
-    //   setupIntentId: null
-    // };
+    // create mongodb customer
+    const newCustomer = {
+      firstName: first.trim(),
+      lastName: last.trim(),
+      email: email.trim(),
+      password: bcrypt.hashSync(password),
+      customerId: customer.id,
+      subscriptionId: subscription.id,
+      cancelAtPeriodEnd: false,
+      plan: plan === 2 ? 'standard' : 'premium',
+      paymentStatus: 'paid',
+      cardDetails: null,
+      nextInvoice: null,
+      invoices: null,
+      isActive: true,
+      resetPasswordLink: null
+    };
 
     // // insert customer into monogdb
     // await collection.insertOne(newCustomer)

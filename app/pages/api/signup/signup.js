@@ -16,17 +16,21 @@ const handler = async (req, res) => {
 
     // retreive setupIntent
     const setupIntent = await stripe.setupIntents.retrieve(setupIntentId);
+
     // get payment method
-    const paymentMethod = setupIntent.payment_method;
+    const paymentMethod = await stripe.paymentMethods.retrieve(
+      setupIntent.payment_method
+    );
+    const { brand, last4, exp_month, exp_year } = paymentMethod.card;
 
     // create customer
     const customer = await stripe.customers.create({
       name: `${first.trim()} ${last.trim()}`,
       email: email,
-      payment_method: paymentMethod,
+      payment_method: paymentMethod.id,
       invoice_settings: {
-        default_payment_method: paymentMethod
-      }
+        default_payment_method: paymentMethod.id,
+      },
     });
 
     // create subscription
@@ -42,6 +46,8 @@ const handler = async (req, res) => {
       ],
     });
 
+    console.log(subscription);
+
     // create mongodb customer
     const newCustomer = {
       firstName: first.trim(),
@@ -51,21 +57,25 @@ const handler = async (req, res) => {
       customerId: customer.id,
       subscriptionId: subscription.id,
       cancelAtPeriodEnd: false,
-      plan: plan === 2 ? 'standard' : 'premium',
-      paymentStatus: 'paid',
-      cardDetails: null,
-      nextInvoice: null,
-      invoices: null,
+      plan: plan === 2 ? "standard" : "premium",
+      paymentStatus: "paid",
+      cardDetails: { brand, last4, exp_month, exp_year },
+      nextInvoice: subscription.current_period_end,
+      invoices: [
+        {
+          date: subscription.current_period_start,
+          amount: subscription.plan.amount,
+        },
+      ],
       isActive: true,
-      resetPasswordLink: null
+      resetPasswordLink: null,
     };
 
     // insert customer into monogdb
-    await collection.insertOne(newCustomer)
+    await collection.insertOne(newCustomer);
 
     // send success message to front end
-    res.status(200).send('success')
-    
+    res.status(200).send("success");
   } catch {
     res.status(500).send("error");
   }

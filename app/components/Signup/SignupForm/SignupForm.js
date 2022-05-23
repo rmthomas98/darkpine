@@ -6,7 +6,9 @@ import { BsCheckLg } from "react-icons/bs";
 import { useRouter } from "next/router";
 import ButtonLoader from "../../ButtonLoader/ButtonLoader";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import { emailErrorMessage } from "../../../helpers/toasts/emailErrorMessage";
+import { errorMessage } from "../../../helpers/toasts/errorMessage";
 
 const SignupForm = ({ setAccountInfo, setStep }) => {
   const {
@@ -28,25 +30,6 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
   // router
   const router = useRouter();
 
-  // set up toast
-  const errorMessage = () =>
-    toast.error("Something went wrong.", {
-      style: {
-        fontSize: "14px",
-        fontWeight: 700,
-      },
-      duration: 5000,
-    });
-
-  const emailErrorMessage = () =>
-    toast.error("Email already in use.", {
-      style: {
-        fontSize: "14px",
-        fontWeight: 700,
-      },
-      duration: 5000,
-    });
-
   useEffect(() => {
     if (plan == 1) return setButtonContent("Create account");
     return setButtonContent("Continue to payment");
@@ -56,26 +39,31 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     if (plan !== 1) {
-      const response = await axios.post('/api/signup/setup-intent', data);
-      if (response.data === 'email in use'){
-        setIsLoading(false)
-        return emailErrorMessage()
-      } else if (response.data === 'error') {
-        setIsLoading(false)
-        return errorMessage()
+      const response = await axios.post("/api/signup/setup-intent", data);
+      if (response.data === "email in use") {
+        setIsLoading(false);
+        return emailErrorMessage();
+      } else if (response.data === "error") {
+        setIsLoading(false);
+        return errorMessage();
       }
       // if no errors
-      // set account info and go to payment 
-      setAccountInfo({ data, plan, clientSecret: response.data.clientSecret, setupIntentId: response.data.setupIntentId});
+      // set account info and go to payment
+      setAccountInfo({
+        data,
+        plan,
+        clientSecret: response.data.clientSecret,
+        setupIntentId: response.data.setupIntentId,
+      });
       setStep(2);
-      setIsLoading(false)
+      setIsLoading(false);
     } else {
       // create free account no need for payment details
       // make call to backend and then redirect to login page
       const response = await axios.post("/api/signup/free-signup", data);
       switch (response?.data) {
         case "success":
-          router.push({ pathname: "/login", query: {newAccount: true} });
+          router.push({ pathname: "/login", query: { newAccount: true } });
           break;
         case "email in use":
           emailErrorMessage();
@@ -98,10 +86,10 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
         setSelectedPlan("Free $0.00 / month");
         break;
       case 2:
-        setSelectedPlan("Standard $8.99 / month");
+        setSelectedPlan("Standard $7.99 / month");
         break;
       case 3:
-        setSelectedPlan("Premium $14.99 / month");
+        setSelectedPlan("Premium $12.99 / month");
         break;
     }
   }, [plan]);
@@ -241,7 +229,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
                   marginRight: 10,
                 }}
               />{" "}
-              Standard $8.99 / month
+              Standard $7.99 / month
             </p>
             <p className={styles.selection} onClick={() => setPlan(3)}>
               <BsCheckLg
@@ -252,7 +240,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
                   marginRight: 10,
                 }}
               />{" "}
-              Premium $14.99 / month
+              Premium $12.99 / month
             </p>
           </div>
         </div>
@@ -260,7 +248,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
           <button
             disabled={isLoading}
             type="submit"
-            className={styles.submitBtn}
+            className={isLoading ? styles.disabled : styles.submitBtn}
           >
             {isLoading ? <ButtonLoader /> : buttonContent}
           </button>

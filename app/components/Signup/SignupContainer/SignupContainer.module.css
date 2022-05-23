@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 800px;
   margin: auto;
+  min-height: 462px;
   border-radius: 10px;
   box-shadow: 0px 20px 40px var(--shadow);
   display: flex;

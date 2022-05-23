@@ -34,15 +34,15 @@ const Nav = () => {
           <Link href="/">
             <a className={styles.link}>Contact</a>
           </Link>
-          <Link href="/">
+          <Link href="/login">
             <a className={styles.link}>Log in</a>
           </Link>
           <Link href="/">
-            <a className={styles.signupBtn} >Get started</a>
+            <a className={styles.signupBtn}>Get started</a>
           </Link>
         </div>
         <div className={styles.mobileActionContainer}>
-          <Link href="/">
+          <Link href="/login">
             <a className={styles.loginBtnMobile}>Log in</a>
           </Link>
           <div className={styles.burger}>

@@ -131,6 +131,21 @@
   transform: scale(0.97);
 }
 
+.disabled {
+  padding: 10px;
+  width: 100%;
+  background: var(--dark-blue);
+  border: none;
+  border-radius: 6px;
+  font-family: "Gilroy", sans-serif;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 75%;
+  cursor: default;
+  transition: 300ms;
+  height: 38px;
+}
+
 .error {
   position: absolute;
   margin-top: 4px;

@@ -8,7 +8,8 @@ import { useState } from "react";
 import ButtonLoader from "../../ButtonLoader/ButtonLoader";
 import axios from "axios";
 import { useRouter } from "next/router";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import { errorMessage } from "../../../helpers/toasts/errorMessage";
 
 const Payment = ({ accountInfo }) => {
   const stripe = useStripe();
@@ -16,16 +17,6 @@ const Payment = ({ accountInfo }) => {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
-
-  // set up toast
-  const errorMessage = () =>
-    toast.error("Something went wrong.", {
-      style: {
-        fontSize: "14px",
-        fontWeight: 700,
-      },
-      duration: 5000,
-    });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,16 +32,16 @@ const Payment = ({ accountInfo }) => {
     // check for payment error
     if (setupCard.error) {
       setIsLoading(false);
-      errorMessage()
+      errorMessage();
     }
 
     // make backend call to create account for mongodb and stripe
     const response = await axios.post("/api/signup/signup", accountInfo);
-    if (response.data === 'success') {
-      router.push({pathname: '/login', query: 'newAccount'})
+    if (response.data === "success") {
+      router.push({ pathname: "/login", query: { newAccount: true } });
     } else {
-      setIsLoading(false)
-      errorMessage()
+      setIsLoading(false);
+      errorMessage();
     }
   };
 
@@ -63,9 +54,11 @@ const Payment = ({ accountInfo }) => {
           <button
             onClick={handleSubmit}
             disabled={isLoading}
-            className={styles.submitBtn}
+            className={
+              isLoading || !stripe ? styles.disabled : styles.submitBtn
+            }
           >
-            {!stripe || isLoading ? <ButtonLoader /> : "Pay now"}
+            {isLoading ? <ButtonLoader /> : "Pay now"}
           </button>
         </div>
       </form>

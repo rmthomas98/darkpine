@@ -1,11 +1,11 @@
-import clientPromise from '../../../lib/mongodb';
+import clientPromise from "../../../lib/mongodb";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const bcrypt = require("bcryptjs");
 
 const handler = async (req, res) => {
   try {
     // get info from frontend
-    const { first, last, email, password } = req.body
+    const { first, last, email, password } = req.body;
 
     // connect to mongodb
     const client = await clientPromise;
@@ -47,7 +47,6 @@ const handler = async (req, res) => {
 
     // send response back to frontend
     res.status(200).send("success");
-
   } catch {
     res.status(500).send("error");
   }

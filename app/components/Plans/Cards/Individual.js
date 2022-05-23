@@ -38,12 +38,14 @@ const Individual = ({ plans }) => {
             Auto Backup
           </div>
           <div className={styles.buttonContainer}>
-            <Link href={{
-              pathname: '/signup',
-              query: {
-                subscription: 1
-              } 
-            }}>
+            <Link
+              href={{
+                pathname: "/signup",
+                query: {
+                  subscription: 1,
+                },
+              }}
+            >
               <a className={styles.selectPlanBtn}>Select Plan</a>
             </Link>
           </div>
@@ -51,7 +53,7 @@ const Individual = ({ plans }) => {
         <div className={styles.card}>
           <div className={styles.label}>Standard</div>
           <p className={styles.title}>
-            $8.99 <span className={styles.time}>/ month</span>
+            $7.99 <span className={styles.time}>/ month</span>
           </p>
           <div className={styles.feature}>
             <BsCheckLg size={12} style={{ marginRight: 8 }} color="#06ce95" /> 1
@@ -90,12 +92,14 @@ const Individual = ({ plans }) => {
             Pine lock
           </div>
           <div className={styles.buttonContainer}>
-          <Link href={{
-              pathname: '/signup',
-              query: {
-                subscription: 2
-              }
-            }}>
+            <Link
+              href={{
+                pathname: "/signup",
+                query: {
+                  subscription: 2,
+                },
+              }}
+            >
               <a className={styles.selectPlanBtn}>Select Plan</a>
             </Link>
           </div>
@@ -103,7 +107,7 @@ const Individual = ({ plans }) => {
         <div className={styles.card} style={{ marginRight: 0 }}>
           <div className={styles.label}>Premium</div>
           <p className={styles.title}>
-            $14.99 <span className={styles.time}>/ month</span>
+            $12.99 <span className={styles.time}>/ month</span>
           </p>
           <div className={styles.feature}>
             <BsCheckLg size={12} style={{ marginRight: 8 }} color="#06ce95" /> 5
@@ -146,12 +150,14 @@ const Individual = ({ plans }) => {
             Shared Folders
           </div>
           <div className={styles.buttonContainer}>
-          <Link href={{
-              pathname: '/signup',
-              query: {
-                subscription: 3
-              }
-            }}>
+            <Link
+              href={{
+                pathname: "/signup",
+                query: {
+                  subscription: 3,
+                },
+              }}
+            >
               <a className={styles.selectPlanBtn}>Select Plan</a>
             </Link>
           </div>

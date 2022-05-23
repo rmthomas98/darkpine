@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import LoginForm from "../components/Login/LoginForm";
 
-const Login = ({ query }) => {
-  // set up toast
-  const newAccountMessage = () =>
-    toast.success("Your account has been created.", {
-      style: {
-        fontSize: "14px",
-        fontWeight: 700,
-      },
-      duration: 5000,
-    });
-
+const Login = () => {
   return (
     <>
-      <Toaster />
+      <LoginForm />
     </>
   );
-};
-
-Login.getInitialProps = ({ query }) => {
-  return { query };
 };
 
 export default Login;

@@ -32,12 +32,12 @@
 }
 
 .link:hover {
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .arrow {
   opacity: 0;
-  color: var(--gold);
+  color: var(--blue);
   transform: translateX(-10px);
   transition: 300ms;
 }

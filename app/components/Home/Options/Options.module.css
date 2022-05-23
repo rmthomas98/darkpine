@@ -74,10 +74,10 @@
 }
 
 .button:hover {
-  background: var(--gold);
-  border: 2px solid var(--gold);
+  background: var(--blue);
+  border: 2px solid var(--blue);
   color: var(--white);
-  box-shadow: 0px 2px 16px var(--gold);
+  box-shadow: 0px 2px 16px var(--blue);
 }
 
 @media screen and (max-width: 700px) {

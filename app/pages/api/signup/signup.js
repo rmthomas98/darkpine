@@ -46,8 +46,6 @@ const handler = async (req, res) => {
       ],
     });
 
-    console.log(subscription);
-
     // create mongodb customer
     const newCustomer = {
       firstName: first.trim(),

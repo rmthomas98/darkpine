@@ -66,3 +66,7 @@ body {
   background: var(--white);
   font-family: "Gilroy", sans-serif;
 }
+
+.dashboard-flex-container {
+  display: flex;
+}

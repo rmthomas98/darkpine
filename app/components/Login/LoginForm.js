@@ -36,6 +36,8 @@ const LoginForm = () => {
     const response = await axios.post("/api/login", data);
     switch (response.data) {
       case "success":
+        setIsLoading(false);
+        router.push("/admin");
         break;
       case "incorrect password":
         setIsLoading(false);

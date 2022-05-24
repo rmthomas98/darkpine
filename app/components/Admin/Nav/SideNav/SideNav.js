@@ -10,6 +10,11 @@ import {
   MdPeopleAlt,
   MdShield,
 } from "react-icons/md";
+import {
+  BsBellFill,
+  BsEnvelopeFill,
+  BsFillPersonCheckFill,
+} from "react-icons/bs";
 
 const SideNav = () => {
   const router = useRouter();
@@ -29,6 +34,7 @@ const SideNav = () => {
             <span style={{ marginLeft: 10 }}>Darkpine</span>
           </a>
         </Link>
+        <p className={styles.subTitle}>MAIN</p>
         <div className={styles.linkContainer}>
           <Link href="/admin">
             <a
@@ -74,7 +80,7 @@ const SideNav = () => {
                 }}
                 size={18}
               />
-              My Files
+              My files
             </a>
           </Link>
           <div
@@ -101,7 +107,7 @@ const SideNav = () => {
                 }}
                 size={18}
               />
-              Shared Files
+              Shared files
             </a>
           </Link>
           <div
@@ -130,7 +136,7 @@ const SideNav = () => {
                 }}
                 size={18}
               />
-              Pine Lock
+              Pine lock
             </a>
           </Link>
           <div
@@ -159,7 +165,7 @@ const SideNav = () => {
                 }}
                 size={18}
               />
-              File Recovery
+              File recovery
             </a>
           </Link>
           <div
@@ -167,6 +173,92 @@ const SideNav = () => {
               router.pathname.endsWith("/file-recovery")
                 ? styles.filled
                 : styles.bar
+            }
+          ></div>
+        </div>
+        <p className={styles.subTitle} style={{ marginTop: 25 }}>
+          COMMUNITY
+        </p>
+        <div className={styles.linkContainer}>
+          <Link href="/admin/notifications">
+            <a
+              className={
+                router.pathname.endsWith("/notifications")
+                  ? styles.selectedLink
+                  : styles.link
+              }
+            >
+              <BsBellFill
+                style={{
+                  marginRight: 8,
+                  color: router.pathname.endsWith("/admin/notifications")
+                    ? "var(--light-green)"
+                    : "",
+                }}
+                size={18}
+              />
+              Notifications
+            </a>
+          </Link>
+          <div
+            className={
+              router.pathname.endsWith("/notifications")
+                ? styles.filled
+                : styles.bar
+            }
+          ></div>
+        </div>
+        <div className={styles.linkContainer}>
+          <Link href="/admin/messages">
+            <a
+              className={
+                router.pathname.endsWith("/messages")
+                  ? styles.selectedLink
+                  : styles.link
+              }
+            >
+              <BsEnvelopeFill
+                style={{
+                  marginRight: 8,
+                  color: router.pathname.endsWith("/admin/messages")
+                    ? "var(--light-green)"
+                    : "",
+                }}
+                size={18}
+              />
+              Messages
+            </a>
+          </Link>
+          <div
+            className={
+              router.pathname.endsWith("/messages") ? styles.filled : styles.bar
+            }
+          ></div>
+        </div>
+        <div className={styles.linkContainer}>
+          <Link href="/admin/friends">
+            <a
+              className={
+                router.pathname.endsWith("/friends")
+                  ? styles.selectedLink
+                  : styles.link
+              }
+            >
+              <BsFillPersonCheckFill
+                style={{
+                  marginRight: 8,
+                  color: router.pathname.endsWith("/admin/friends")
+                    ? "var(--light-green)"
+                    : "",
+                }}
+                size={18}
+              />
+              My Friends
+            </a>
+          </Link>
+          <div
+            className={
+              router.pathname.endsWith("/friends") ? styles.filled : styles.bar
             }
           ></div>
         </div>

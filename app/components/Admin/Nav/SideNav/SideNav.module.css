@@ -19,9 +19,19 @@
   align-items: center;
   font-weight: 500;
   padding: 10px 20px;
+  padding-bottom: 10px;
   /* border-bottom: 1px solid var(--light-gray); */
   margin-right: 20px;
   margin-left: 20px;
+}
+
+.subTitle {
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 65%;
+  color: var(--mid-gray);
+  letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 .linkContainer {
@@ -34,7 +44,7 @@
   padding: 10px 20px;
   font-size: 75%;
   font-weight: 600;
-  color: var(--mid-gray);
+  color: var(--gray);
   text-decoration: none;
   transition: 300ms;
   width: 100%;
@@ -44,7 +54,7 @@
 
 .link:hover {
   background: var(--white);
-  color: var(--dark-gray);
+  color: var(--black);
 }
 
 .selectedLink {
@@ -55,13 +65,13 @@
   transition: 300ms;
   width: 100%;
   background: var(--white);
-  color: var(--dark-gray);
+  color: var(--black);
   display: flex;
   align-items: center;
 }
 
 .bar {
-  width: 2.5px;
+  width: 3px;
   background: var(--light-green);
   position: absolute;
   height: 0px;
@@ -78,7 +88,7 @@
 
 .filled {
   height: 100%;
-  width: 2.5px;
+  width: 3px;
   background: var(--light-green);
   position: absolute;
   transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);

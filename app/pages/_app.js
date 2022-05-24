@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }) => {
       <>
         <div className="dashboard-flex-container">
           <SideNav />
-          <div>
+          <div style={{ width: "100%" }}>
             <NavBar />
             <Component {...pageProps} />
           </div>

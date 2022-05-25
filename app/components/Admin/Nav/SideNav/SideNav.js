@@ -8,6 +8,7 @@ import {
   MdDashboard,
   MdFolder,
   MdPeopleAlt,
+  MdSend,
   MdShield,
 } from "react-icons/md";
 import {
@@ -107,12 +108,41 @@ const SideNav = () => {
                 }}
                 size={18}
               />
-              Shared files
+              My shared files
             </a>
           </Link>
           <div
             className={
               router.pathname.endsWith("/shared-files")
+                ? styles.filled
+                : styles.bar
+            }
+          ></div>
+        </div>
+        <div className={styles.linkContainer}>
+          <Link href="/admin/shared-with-me">
+            <a
+              className={
+                router.pathname.endsWith("/shared-with-me")
+                  ? styles.selectedLink
+                  : styles.link
+              }
+            >
+              <MdSend
+                style={{
+                  marginRight: 8,
+                  color: router.pathname.endsWith("/admin/shared-with-me")
+                    ? "var(--light-green)"
+                    : "",
+                }}
+                size={18}
+              />
+              Files shared with me
+            </a>
+          </Link>
+          <div
+            className={
+              router.pathname.endsWith("/shared-with-me")
                 ? styles.filled
                 : styles.bar
             }
@@ -177,7 +207,7 @@ const SideNav = () => {
           ></div>
         </div>
         <p className={styles.subTitle} style={{ marginTop: 25 }}>
-          COMMUNITY
+          ACCOUNT
         </p>
         <div className={styles.linkContainer}>
           <Link href="/admin/notifications">

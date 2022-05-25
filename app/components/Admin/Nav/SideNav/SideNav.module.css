@@ -27,8 +27,8 @@
 
 .subTitle {
   padding: 10px 20px;
-  font-weight: 700;
-  font-size: 65%;
+  font-weight: 600;
+  font-size: 60%;
   color: var(--mid-gray);
   letter-spacing: 1px;
   margin-top: 10px;
@@ -43,7 +43,7 @@
 .link {
   padding: 10px 20px;
   font-size: 75%;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--gray);
   text-decoration: none;
   transition: 300ms;
@@ -60,7 +60,7 @@
 .selectedLink {
   padding: 10px 20px;
   font-size: 75%;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   transition: 300ms;
   width: 100%;

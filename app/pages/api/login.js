@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 import { withIronSessionApiRoute } from "iron-session/next";
 
 export default withIronSessionApiRoute(
-  async function loginRoute(req, res) {
+  async (req, res) => {
     const { email, password } = req.body;
     const client = await clientPromise;
     const db = client.db("darkpine");

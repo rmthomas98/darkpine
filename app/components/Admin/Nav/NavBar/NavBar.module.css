@@ -88,7 +88,6 @@
 
 .bellContainer,
 .messageContainer {
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +124,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   padding: 5px;
   border-radius: 6px;
   transition: 300ms;
@@ -152,4 +150,5 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  pointer-events: none;
 }

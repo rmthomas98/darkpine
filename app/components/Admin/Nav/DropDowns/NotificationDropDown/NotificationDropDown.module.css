@@ -1,0 +1,76 @@
+.wrapper {
+  padding-top: 25px;
+  position: absolute;
+  top: 28px;
+  /* width: 130px; */
+  width: 220px;
+  transition: 400ms;
+}
+
+.show {
+  z-index: 9999;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hide {
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0px 5px 20px var(--shadow);
+  border-radius: 8px;
+}
+
+.container::after {
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  content: "";
+  display: block;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  position: absolute;
+  border-radius: 2px;
+}
+
+.text {
+  color: var(--black);
+  font-size: 70%;
+  font-weight: 600;
+  padding: 10px 16px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.btnContainer {
+  padding: 10px 16px;
+  padding-bottom: 16px;
+  padding-top: 0px;
+  width: 100%;
+  display: flex;
+}
+
+.viewBtn {
+  font-weight: 600;
+  font-size: 65%;
+  width: 100%;
+  text-align: center;
+  padding: 6px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 300ms;
+  border: 1px solid var(--forest-green);
+  color: var(--black);
+  background: var(--gray-tint);
+}
+
+.viewBtn:hover {
+  background: var(--dark-gray-tint);
+}

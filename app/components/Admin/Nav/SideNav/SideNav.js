@@ -45,15 +45,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdDashboard
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <MdDashboard style={{ marginRight: 8 }} size={18} />
               Dashboard
             </a>
           </Link>
@@ -72,15 +64,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdFolder
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/my-files")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <MdFolder style={{ marginRight: 8 }} size={18} />
               My files
             </a>
           </Link>
@@ -99,15 +83,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdPeopleAlt
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/shared-files")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <MdPeopleAlt style={{ marginRight: 8 }} size={18} />
               My shared files
             </a>
           </Link>
@@ -128,15 +104,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdSend
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/shared-with-me")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <MdSend style={{ marginRight: 8 }} size={18} />
               Files shared with me
             </a>
           </Link>
@@ -157,15 +125,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdShield
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/pine-lock")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <MdShield style={{ marginRight: 8 }} size={18} />
               Pine lock
             </a>
           </Link>
@@ -186,15 +146,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdAutoFixHigh
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/file-recovery")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <MdAutoFixHigh style={{ marginRight: 8 }} size={18} />
               File recovery
             </a>
           </Link>
@@ -218,15 +170,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <BsBellFill
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/notifications")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <BsBellFill style={{ marginRight: 8 }} size={18} />
               Notifications
             </a>
           </Link>
@@ -247,15 +191,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <BsEnvelopeFill
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/messages")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <BsEnvelopeFill style={{ marginRight: 8 }} size={18} />
               Messages
             </a>
           </Link>
@@ -274,15 +210,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <BsFillPersonCheckFill
-                style={{
-                  marginRight: 8,
-                  color: router.pathname.endsWith("/admin/friends")
-                    ? "var(--light-green)"
-                    : "",
-                }}
-                size={18}
-              />
+              <BsFillPersonCheckFill style={{ marginRight: 8 }} size={18} />
               My Friends
             </a>
           </Link>

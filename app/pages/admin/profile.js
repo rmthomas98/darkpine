@@ -1,5 +1,7 @@
+import ProfileContainer from "../../components/Admin/Profile/ProfileContainer/ProfileContainer";
+
 const Profile = () => {
-  return <></>;
+  return <ProfileContainer />;
 };
 
 export default Profile;

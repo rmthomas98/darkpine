@@ -211,7 +211,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
           >
             <p className={styles.selection} onClick={() => setPlan(1)}>
               <BsCheckLg
-                color="var(--blue)"
+                color="var(--forest-green)"
                 style={{
                   display: plan === 1 ? "block" : "none",
                   marginRight: 10,
@@ -222,7 +222,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
             </p>
             <p className={styles.selection} onClick={() => setPlan(2)}>
               <BsCheckLg
-                color="var(--blue)"
+                color="var(--forest-green)"
                 size={12}
                 style={{
                   display: plan === 2 ? "block" : "none",
@@ -233,7 +233,7 @@ const SignupForm = ({ setAccountInfo, setStep }) => {
             </p>
             <p className={styles.selection} onClick={() => setPlan(3)}>
               <BsCheckLg
-                color="var(--blue)"
+                color="var(--forest-green)"
                 size={12}
                 style={{
                   display: plan === 3 ? "block" : "none",

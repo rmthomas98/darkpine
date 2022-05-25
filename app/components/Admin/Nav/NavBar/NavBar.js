@@ -3,13 +3,16 @@ import { FiSearch } from "react-icons/fi";
 import { BsBellFill, BsEnvelopeFill } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi";
 import { useState } from "react";
-import AccountDropDown from "../AccountDropDown/AccountDropDown";
+import AccountDropDown from "../DropDowns/AccountDropDown/AccountDropDown";
 import avatar from "../../../../public/assets/images/avatar.svg";
 import Image from "next/image";
+import NotificationDropDown from "../DropDowns/NotificationDropDown/NotificationDropDown";
+import MessagesDropDown from "../DropDowns/MessagesDropDown/MessagesDropDown";
 
 const NavBar = () => {
   const [accountMenu, setAccountMenu] = useState(false);
   const [notifsMenu, setNotifsMenu] = useState(false);
+  const [messageMenu, setMessageMenu] = useState(false);
 
   return (
     <div className={styles.wrapper}>
@@ -22,13 +25,23 @@ const NavBar = () => {
           </div>
         </div>
         <div className={styles.navContainer}>
-          <div className={styles.messageContainer}>
+          <div
+            className={styles.messageContainer}
+            onMouseEnter={() => setMessageMenu(true)}
+            onMouseLeave={() => setMessageMenu(false)}
+          >
             <div className={styles.expanse}></div>
             <BsEnvelopeFill className={styles.message} />
+            <MessagesDropDown isActive={messageMenu} />
           </div>
-          <div className={styles.bellContainer}>
+          <div
+            className={styles.bellContainer}
+            onMouseEnter={() => setNotifsMenu(true)}
+            onMouseLeave={() => setNotifsMenu(false)}
+          >
             <div className={styles.expanse}></div>
             <BsBellFill className={styles.bell} />
+            <NotificationDropDown isActive={notifsMenu} />
           </div>
           <div
             className={styles.profileContainer}

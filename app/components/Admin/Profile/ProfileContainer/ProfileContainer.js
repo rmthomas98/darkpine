@@ -1,5 +1,5 @@
-import Name from "../Name/Name";
 import styles from "./ProfileContainer.module.css";
+import Name from "../Name/Name";
 
 const ProfileContainer = () => {
   <div className={styles.wrapper}>

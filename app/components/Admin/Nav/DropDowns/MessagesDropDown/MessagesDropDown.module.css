@@ -66,7 +66,7 @@
   border-radius: 6px;
   text-decoration: none;
   transition: 300ms;
-  border: 1px solid var(--forest-green);
+  border: 1px solid var(--blue);
   color: var(--black);
   background: var(--gray-tint);
 }

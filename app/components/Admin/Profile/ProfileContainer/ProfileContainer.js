@@ -2,11 +2,14 @@ import styles from "./ProfileContainer.module.css";
 import Name from "../Name/Name";
 
 const ProfileContainer = () => {
-  <div className={styles.wrapper}>
-    <div className={styles.container}>
-      <Name />
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <p className={styles.header}>Manage Profile</p>
+        <Name />
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default ProfileContainer;

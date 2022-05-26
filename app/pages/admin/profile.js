@@ -1,4 +1,4 @@
-import ProfileContainer from "../../components/Admin/Profile/ProfileContainer/ProfileContainer.js";
+import ProfileContainer from "../../components/Admin/Profile/ProfileContainer/ProfileContainer";
 
 const Profile = () => {
   return (

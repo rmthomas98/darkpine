@@ -1,3 +1,14 @@
 .wrapper {
-  padding: 16px;
+  padding: 0px 16px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header {
+  font-weight: 800;
+  font-size: 110%;
+  margin-bottom: 10px;
 }

@@ -14,8 +14,7 @@ export default withIronSessionApiRoute(
       if (response) {
         req.session.user = {
           id: user._id,
-          admin: true,
-          data: user,
+          email: user.email,
         };
         await req.session.save();
         res.status(200).send("success");
@@ -26,7 +25,7 @@ export default withIronSessionApiRoute(
   },
   {
     cookieName: "user",
-    password: "jfkdlskdjfkdlskdjfkdlskdjfkdlskd",
+    password: "11111111111111111111111111111111",
     cookieOptions: {
       secure: process.env.NODE_ENV === "production",
     },

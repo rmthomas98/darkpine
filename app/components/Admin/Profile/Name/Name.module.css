@@ -4,8 +4,117 @@
   transition: 300ms;
 }
 
+.header {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--shadow);
+}
+
 .title {
   font-weight: 700;
-  border-bottom: 1px solid var(--shadow);
-  padding: 20px;
+}
+
+.mainContainer {
+  padding: 30px 20px;
+  display: flex;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  margin-right: 20px;
+  max-width: 300px;
+}
+
+.input {
+  width: 100%;
+  padding: 9px 10px;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 700;
+  color: var(--black);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  transition: 300ms;
+  background: #fff;
+  border: 1px solid var(--shadow);
+}
+
+/* .input:focus,
+.input:hover {
+  box-shadow: 0px 4px 18px var(--shadow);
+} */
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-weight: 600;
+  font-size: 70%;
+  transition: 300ms;
+  pointer-events: none;
+}
+
+.filled {
+  top: -2px;
+  font-size: 57%;
+  background: var(--black);
+  color: var(--white);
+  left: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  position: absolute;
+  transform: translateY(-50%);
+  border-radius: 4px;
+}
+
+.inputContainer:focus-within .label {
+  top: -2px;
+  font-size: 57%;
+  background: var(--black);
+  color: var(--white);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.footer {
+  padding: 10px 20px;
+  border-top: 1px solid var(--shadow);
+  background: var(--dark-gray-tint);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerText {
+  font-size: 65%;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+.confirmBtn,
+.disabled {
+  padding: 3px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 60%;
+  font-weight: 500;
+  font-family: inherit;
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0px 2px 4px var(--blue);
+  transition: 300ms;
+  letter-spacing: 0.5px;
+}
+
+.confirmBtn:hover {
+  box-shadow: 0px 3px 8px var(--blue);
+}
+
+.disabled {
+  background: #fff;
+  color: #000;
+  box-shadow: none;
+  cursor: default;
 }

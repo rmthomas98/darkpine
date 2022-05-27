@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { errorMessage } from "../../../../../helpers/toasts/errorMessage";
 import { Toaster } from "react-hot-toast";
 
-const AccountDropDown = ({ isActive }) => {
+const AccountDropDown = ({ isActive, setIsActive }) => {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -26,7 +26,7 @@ const AccountDropDown = ({ isActive }) => {
       >
         <div className={styles.container}>
           <Link href="/admin/profile">
-            <a className={styles.link}>
+            <a className={styles.link} onClick={() => setIsActive(false)}>
               <div className={styles.iconContainer}>
                 <FaUserCircle size={14} />
               </div>

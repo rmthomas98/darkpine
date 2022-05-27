@@ -1,5 +1,7 @@
 import styles from "./ProfileContainer.module.css";
 import Name from "../Name/Name";
+import Email from "../Email/Email";
+import Password from "../Password/Password";
 
 const ProfileContainer = ({ user }) => {
   return (
@@ -13,6 +15,8 @@ const ProfileContainer = ({ user }) => {
             email: user.email,
           }}
         />
+        <Email user={{ email: user.email }} />
+        <Password />
       </div>
     </div>
   );

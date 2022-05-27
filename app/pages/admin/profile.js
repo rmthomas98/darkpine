@@ -29,7 +29,7 @@ export const getServerSideProps = withIronSessionSsr(
     const collection = db.collection("users");
 
     // get user from db
-    user = await collection.findOne({ email: user.email });
+    user = await collection.findOne({ customerId: user.id });
 
     return {
       props: {

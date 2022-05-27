@@ -13,8 +13,7 @@ export default withIronSessionApiRoute(
     bcrypt.compare(password, user.password, async (err, response) => {
       if (response) {
         req.session.user = {
-          id: user._id,
-          email: user.email,
+          id: user.customerId,
         };
         await req.session.save();
         res.status(200).send("success");

@@ -14,12 +14,21 @@ const NavBar = () => {
   const [notifsMenu, setNotifsMenu] = useState(false);
   const [messageMenu, setMessageMenu] = useState(false);
 
+  const [search, setSearch] = useState("");
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.inputContainer}>
-          <input type="text" className={styles.input} />
-          <span className={styles.label}>Search files...</span>
+          <input
+            type="text"
+            className={styles.input}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <span className={search ? styles.filled : styles.label}>
+            Search files...
+          </span>
           <div className={styles.searchContainer}>
             <FiSearch className={styles.search} />
           </div>
@@ -56,7 +65,10 @@ const NavBar = () => {
               Account
               <HiChevronDown style={{ marginLeft: 2 }} />
             </p>
-            <AccountDropDown isActive={accountMenu} />
+            <AccountDropDown
+              isActive={accountMenu}
+              setIsActive={setAccountMenu}
+            />
           </div>
         </div>
       </div>

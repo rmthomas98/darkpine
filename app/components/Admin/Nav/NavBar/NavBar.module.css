@@ -62,7 +62,8 @@
   color: var(--black);
 }
 
-.label {
+.label,
+.filled {
   position: absolute;
   left: 10px;
   top: 50%;
@@ -75,6 +76,10 @@
 }
 
 .inputContainer:focus-within .label {
+  opacity: 0;
+}
+
+.filled {
   opacity: 0;
 }
 

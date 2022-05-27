@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react";
-import styles from "./Name.module.css";
+import styles from "./Email.module.css";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
 
-const Name = ({ user }) => {
+const Email = ({ user }) => {
   const router = useRouter();
 
-  const [firstName, setFirstName] = useState(user.firstName);
-  const [lastName, setLastName] = useState(user.lastName);
+  const [email, setEmail] = useState(user.email);
   const [isLoading, setIsLoading] = useState(false);
   const [disabled, setDisabled] = useState(true);
 
+  useEffect(() => {
+    if (!email || email === user.email) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [email]);
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!firstName || !lastName) return;
+    if (!email) return;
     setIsLoading(true);
 
-    const loadingToast = toast.loading("Updating name...", {
+    const loadingToast = toast.loading("Updating email...", {
       style: {
         fontSize: "13px",
         fontWeight: 500,
@@ -26,16 +33,15 @@ const Name = ({ user }) => {
       },
     });
 
-    const response = await axios.post("/api/admin/profile/update-name", {
-      firstName,
-      lastName,
+    const response = await axios.post("/api/admin/profile/update-email", {
       email: user.email,
+      updatedEmail: email.trim(),
     });
 
     if (response.data === "success") {
       setIsLoading(false);
       setDisabled(true);
-      toast.success("Name updated!", {
+      toast.success("Email updated!", {
         id: loadingToast,
         style: {
           fontSize: "13px",
@@ -67,57 +73,32 @@ const Name = ({ user }) => {
     }
   };
 
-  useEffect(() => {
-    if (
-      (firstName !== user.firstName && firstName && lastName) ||
-      (lastName !== user.lastName && lastName && firstName)
-    ) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
-  }, [firstName, lastName]);
-
   return (
     <>
       <Toaster />
       <form className={styles.container} onSubmit={onSubmit}>
         <div className={styles.header}>
-          <p className={styles.title}>Your name</p>
+          <p className={styles.title}>Your Email</p>
         </div>
         <div className={styles.mainContainer}>
           <div className={styles.inputContainer}>
             <input
-              type="text"
+              type="email"
               className={styles.input}
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <span className={firstName ? styles.filled : styles.label}>
-              First Name
-            </span>
-          </div>
-          <div className={styles.inputContainer} style={{ marginRight: 0 }}>
-            <input
-              type="text"
-              className={styles.input}
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <span className={lastName ? styles.filled : styles.label}>
-              Last Name
-            </span>
+            <span className={email ? styles.filled : styles.label}>Email</span>
           </div>
         </div>
-
         <div className={styles.footer}>
-          <p className={styles.footerText}>Update your name for billing.</p>
+          <p className={styles.footerText}>Update your email.</p>
           <button
+            type="submit"
             disabled={isLoading || disabled}
             className={
               isLoading || disabled ? styles.disabled : styles.confirmBtn
             }
-            type="submit"
           >
             Confirm
           </button>
@@ -127,4 +108,4 @@ const Name = ({ user }) => {
   );
 };
 
-export default Name;
+export default Email;

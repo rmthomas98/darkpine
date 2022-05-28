@@ -29,7 +29,7 @@ const Name = ({ user }) => {
     const response = await axios.post("/api/admin/profile/update-name", {
       firstName,
       lastName,
-      email: user.email,
+      customerId: user.customerId,
     });
 
     if (response.data === "success") {

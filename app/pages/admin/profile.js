@@ -39,6 +39,7 @@ export const getServerSideProps = withIronSessionSsr(
           email: user.email,
           password: user.password,
           avatar: user.avatar,
+          customerId: user.customerId,
         },
       },
     };

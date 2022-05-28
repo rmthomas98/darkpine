@@ -144,9 +144,9 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  margin-right: 5px;
   position: relative;
   z-index: 1;
+  margin-right: 5px;
 }
 
 .myAccount {

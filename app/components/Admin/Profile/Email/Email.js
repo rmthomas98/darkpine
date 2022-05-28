@@ -34,8 +34,8 @@ const Email = ({ user }) => {
     });
 
     const response = await axios.post("/api/admin/profile/update-email", {
-      email: user.email,
-      updatedEmail: email.trim(),
+      customerId: user.customerId,
+      email: email.trim(),
     });
 
     if (response.data === "success") {
@@ -55,6 +55,21 @@ const Email = ({ user }) => {
         },
       });
       router.replace(router.asPath);
+    } else if (response.data === "email in use") {
+      setIsLoading(false);
+      toast.error("Email is already in use.", {
+        id: loadingToast,
+        style: {
+          fontSize: "13px",
+          fontWeight: 500,
+          background: "#333",
+          color: "#fff",
+        },
+        iconTheme: {
+          primary: "#e6375d",
+          secondary: "#fff",
+        },
+      });
     } else {
       setIsLoading(false);
       toast.error("An error has occurred.", {

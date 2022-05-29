@@ -7,7 +7,7 @@ export default withIronSessionApiRoute(
   },
   {
     cookieName: "user",
-    password: "djsksksjdksldksjaksldkslaksokdls",
+    password: process.env.IRON_SESSION_PASSWORD,
     cookieOptions: {
       secure: process.env.NODE_ENV === "production",
     },

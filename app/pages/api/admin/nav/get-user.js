@@ -16,7 +16,7 @@ const handler = withIronSessionApiRoute(
   },
   {
     cookieName: "user",
-    password: "11111111111111111111111111111111",
+    password: process.env.IRON_SESSION_PASSWORD,
     cookieOptions: {
       secure: process.env.NODE_ENV === "production",
     },

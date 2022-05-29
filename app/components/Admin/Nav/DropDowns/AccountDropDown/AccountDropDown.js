@@ -42,8 +42,8 @@ const AccountDropDown = ({ isActive, setIsActive }) => {
               </div>
             </a>
           </Link>
-          <Link href="/">
-            <a className={styles.link}>
+          <Link href="/admin/settings">
+            <a className={styles.link} onClick={() => setIsActive(false)}>
               <div
                 className={styles.iconContainer}
                 style={{

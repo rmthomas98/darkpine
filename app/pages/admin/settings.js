@@ -1,13 +1,9 @@
-import ProfileContainer from "../../components/Admin/Profile/ProfileContainer/ProfileContainer";
+import SettingsContainer from "../../components/Admin/Settings/SettingsContainer/SettingsContainer";
 import { withIronSessionSsr } from "iron-session/next";
 import clientPromise from "../../lib/mongodb";
 
-const Profile = ({ user }) => {
-  return (
-    <>
-      <ProfileContainer user={user} />
-    </>
-  );
+const Settings = ({ user }) => {
+  return <SettingsContainer user={user} />;
 };
 
 export const getServerSideProps = withIronSessionSsr(
@@ -23,23 +19,24 @@ export const getServerSideProps = withIronSessionSsr(
       };
     }
 
-    // connect to mongodb
     const client = await clientPromise;
     const db = client.db("darkpine");
     const collection = db.collection("users");
 
-    // get user from db
     user = await collection.findOne({ customerId: user.id });
 
     return {
       props: {
         user: {
-          firstName: user.firstName,
-          lastName: user.lastName,
-          email: user.email,
-          password: user.password,
-          avatar: user.avatar,
           customerId: user.customerId,
+          subscriptionId: user.subscriptionId,
+          cancelAtPeriodEnd: user.cancelAtPeriodEnd,
+          plan: user.plan,
+          paymentStatus: user.paymentStatus,
+          cardDetails: user.cardDetails,
+          nextInvoice: user.nextInvoice,
+          invoices: user.invoices,
+          isActive: user.isActive,
         },
       },
     };
@@ -53,4 +50,4 @@ export const getServerSideProps = withIronSessionSsr(
   }
 );
 
-export default Profile;
+export default Settings;

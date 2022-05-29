@@ -2,12 +2,13 @@ import styles from "./NavBar.module.css";
 import { FiSearch } from "react-icons/fi";
 import { BsBellFill, BsEnvelopeFill } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AccountDropDown from "../DropDowns/AccountDropDown/AccountDropDown";
-import avatar from "../../../../public/assets/images/avatar.svg";
+import defaultAvatar from "../../../../public/assets/images/avatar.svg";
 import Image from "next/image";
 import NotificationDropDown from "../DropDowns/NotificationDropDown/NotificationDropDown";
 import MessagesDropDown from "../DropDowns/MessagesDropDown/MessagesDropDown";
+import axios from "axios";
 
 const NavBar = () => {
   const [accountMenu, setAccountMenu] = useState(false);
@@ -15,6 +16,16 @@ const NavBar = () => {
   const [messageMenu, setMessageMenu] = useState(false);
 
   const [search, setSearch] = useState("");
+
+  const [avatar, setAvatar] = useState();
+
+  useEffect(() => {
+    const getAvatar = async () => {
+      const response = await axios.get("/api/admin/nav/get-user");
+      setAvatar(response.data.avatar);
+    };
+    getAvatar();
+  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -59,7 +70,15 @@ const NavBar = () => {
           >
             <div className={styles.expanse}></div>
             <div className={styles.avatarContainer}>
-              <Image src={avatar} layout="fixed" height={30} width={30} />
+              <Image
+                src={avatar ? avatar : defaultAvatar}
+                layout="fixed"
+                objectFit="cover"
+                objectPosition="center"
+                height={30}
+                width={30}
+                quality={100}
+              />
             </div>
             <p className={styles.myAccount}>
               Account

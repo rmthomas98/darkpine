@@ -147,6 +147,7 @@
   position: relative;
   z-index: 1;
   margin-right: 5px;
+  overflow: hidden;
 }
 
 .myAccount {

@@ -17,6 +17,7 @@
 .mainContainer {
   padding: 30px 20px;
   display: flex;
+  align-items: center;
 }
 
 .inputContainer {
@@ -120,4 +121,38 @@
   box-shadow: none;
   cursor: default;
   border: 1px solid var(--shadow);
+}
+
+.imageContainer {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 4px 14px var(--shadow);
+}
+
+.inputButton {
+  padding: 20px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileUploadBtn {
+  font-size: 65%;
+  font-weight: 500;
+  padding: 4px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #000;
+  transition: 300ms;
+  margin-left: 20px;
+  border: 1px solid var(--shadow);
+  background: var(--gray-tint);
+}
+
+.fileUploadBtn:hover {
+  border: 1px solid var(--dark-gray);
 }

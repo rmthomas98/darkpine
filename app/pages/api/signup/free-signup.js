@@ -31,6 +31,8 @@ const handler = async (req, res) => {
       email: email.trim(),
       password: bcrypt.hashSync(password),
       avatar: null,
+      notifications: null,
+      messages: null,
       customerId: customer.id,
       subscriptionId: null,
       cancelAtPeriodEnd: false,

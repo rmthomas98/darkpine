@@ -1,0 +1,28 @@
+.btnContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.goBackBtn,
+.confirmBtn {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.confirmBtn {
+  background: var(--blue);
+  transition: 300ms;
+  margin-right: 10px;
+}
+
+.goBackBtn {
+  background: var(--dark-gray-tint);
+  color: var(--black);
+  margin-right: 10px;
+}

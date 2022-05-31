@@ -27,7 +27,13 @@ const handler = async (req, res) => {
     const customer = await stripe.customers.create({
       name: `${first.trim()} ${last.trim()}`,
       email: email,
-      payment_method: paymentMethod.id,
+    });
+
+    await stripe.paymentMethods.attach(paymentMethod.id, {
+      customer: customer.id,
+    });
+
+    await stripe.customers.update(customer.id, {
       invoice_settings: {
         default_payment_method: paymentMethod.id,
       },

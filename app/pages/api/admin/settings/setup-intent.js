@@ -8,10 +8,9 @@ const handler = async (req, res) => {
     });
 
     const clientSecret = setupIntent.client_secret;
-    const setupIntentId = setupIntent.id;
 
     // send setup intent back to frontend
-    res.status(200).json({ clientSecret, setupIntentId });
+    res.status(200).json({ clientSecret });
   } catch {
     res.status(500).send("error");
   }

@@ -37,10 +37,6 @@
   transition: 300ms;
   background: #fff;
   border: 1px solid var(--shadow);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
 }
 
 /* .input:focus,
@@ -91,20 +87,21 @@
 }
 
 .footerText,
-.inputText {
+.cardText {
   font-size: 65%;
   font-weight: 600;
   color: var(--dark-gray);
 }
 
-.inputText {
-  color: var(--black);
+.cardText {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60%;
 }
 
 .confirmBtn,
-.disabled,
-.cancelBtn,
-.renewBtn {
+.disabled {
   padding: 3px 14px;
   border: none;
   border-radius: 4px;
@@ -124,19 +121,6 @@
   box-shadow: 0px 4px 12px var(--blue);
 }
 
-.cancelBtn {
-  background: red;
-  border: 1px solid red;
-  box-shadow: none;
-}
-
-.renewBtn {
-  margin-right: 5px;
-  background: var(--light-green);
-  border: 1px solid var(--light-green);
-  box-shadow: none;
-}
-
 .disabled {
   background: #fff;
   color: #000;
@@ -145,53 +129,35 @@
   border: 1px solid var(--shadow);
 }
 
-.dropDownContainer {
-  position: absolute;
-  width: 100%;
-  top: 50px;
-  border-radius: 6px;
-  /* border: 1px solid var(--shadow); */
-  overflow: hidden;
-  box-shadow: 0px 4px 14px var(--shadow);
-  transition: 300ms;
-}
-
-.dropDownSelection {
-  padding: 8px 10px;
-  background: #fff;
-  font-weight: 600;
+.tableHeader {
   display: flex;
-  align-items: center;
-  font-size: 65%;
-  cursor: pointer;
-  transition: 300ms;
-}
-
-.dropDownSelection:hover {
-  background: var(--gray-tint);
-}
-
-.cancelDate,
-.currentPlan {
-  font-size: 60%;
-  font-weight: 600;
-  margin-top: 12px;
-  background: #fff;
-  border: 1px solid #ff0000;
-  color: #ff0000;
+  width: 300px;
+  border: 1px solid var(--shadow);
   padding: 4px;
   border-radius: 4px;
-  width: fit-content;
+  background: #fff;
 }
 
-.currentPlan {
-  margin-top: 0;
-  margin-bottom: 12px;
-  border: none;
-  background: var(--gray-tint);
-  color: #000;
-  border: 1px solid var(--shadow);
-  text-transform: capitalize;
-  font-weight: 700;
+.tableHeaderTitle {
   font-size: 65%;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+
+.cardContainer {
+  display: flex;
+  width: 300px;
+  margin-top: 5px;
+}
+
+.noteContainer {
+  padding: 4px;
+  background: #ff0000;
+  color: #fff;
+  font-size: 60%;
+  font-weight: 600;
+  width: fit-content;
+  border-radius: 4px;
+  margin-bottom: 8px;
 }

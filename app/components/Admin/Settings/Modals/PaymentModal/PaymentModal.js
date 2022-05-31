@@ -15,13 +15,11 @@ const PaymentModal = ({
   selectedPlan,
 }) => {
   const [clientSecret, setClientSecret] = useState();
-  const [setupIntentId, setSetupIntentId] = useState();
 
   useEffect(() => {
     const getStripeSetup = async () => {
       const response = await axios.get("/api/admin/settings/setup-intent");
       setClientSecret(response.data.clientSecret);
-      setSetupIntentId(response.data.setupIntentId);
     };
     getStripeSetup();
   }, []);
@@ -65,14 +63,14 @@ const PaymentModal = ({
         <div className={paymentModal ? styles.show : styles.container}>
           <p className={styles.title}>Payment Information</p>
           <div className={styles.description}>
-            You are signing up for the standard plan and will be charged{" "}
-            {selectedPlan === 2 ? "$7.99" : "$12.99"} immediately and will
-            continue to be charged {selectedPlan === 2 ? "$7.99" : "$12.99"} on
-            a monthly basis.
+            You are signing up for the{" "}
+            {selectedPlan === 2 ? "standard plan" : "premium plan"}. You will be
+            charged {selectedPlan === 2 ? "$7.99" : "$12.99"} immediately and
+            will continue to be charged{" "}
+            {selectedPlan === 2 ? "$7.99" : "$12.99"} on a monthly basis.
           </div>
           <Elements stripe={stripeLoader} options={options}>
             <PaymentProvider
-              setupIntentId={setupIntentId}
               setPaymentModal={setPaymentModal}
               selectedPlan={selectedPlan}
               customerId={customerId}

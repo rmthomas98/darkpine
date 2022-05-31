@@ -14,8 +14,8 @@ const DowngradeToStandardModal = ({
         <p className={styles.title}>Downgrade to Standard</p>
         <p className={styles.description}>
           You are about to downgrade from premium to standard. Your plan will
-          change to standard immediately and you will have a $4.99 credit that
-          will be used towards your next bill.
+          change to standard immediately and you will have a credit that will be
+          used towards your next bill.
         </p>
         <div className={styles.btnContainer}>
           <button

@@ -6,7 +6,6 @@ import {
 } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
-import { errorMessage } from "../../../../../helpers/toasts/errorMessage";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
 
@@ -30,12 +29,7 @@ const errorIconTheme = {
   secondary: "#fff",
 };
 
-const PaymentProvider = ({
-  setupIntentId,
-  customerId,
-  setPaymentModal,
-  selectedPlan = { selectedPlan },
-}) => {
+const PaymentProvider = ({ customerId, setPaymentModal, selectedPlan }) => {
   const stripe = useStripe();
   const elements = useElements();
   const router = useRouter();
@@ -58,14 +52,17 @@ const PaymentProvider = ({
     // check for payment error
     if (setupCard.error) {
       setIsLoading(false);
-      errorMessage();
+      toast.error("An error has occured", {
+        id: loadingToast,
+        style: toastStyle,
+        iconTheme: errorIconTheme,
+      });
     }
 
     const response = await axios.post(
       "/api/admin/settings/create-subscription",
       {
         customerId,
-        setupIntentId,
         selectedPlan,
         paymentMethod: setupCard.setupIntent.payment_method,
       }

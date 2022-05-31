@@ -11,7 +11,7 @@ import RenewPlanModal from "../Modals/RenewPlanModal/RenewPlan";
 import ToFree from "../Modals/ToFree/ToFree";
 import UpgradeToPremiumModal from "../Modals/UpgradeToPremiumModal/UpgradeToPremiumModal";
 import DowngradeToStandardModal from "../Modals/DowngradeToStandardModal/DowngradeToStandardModal";
-import PaymentStandardModalProvider from "../Modals/PaymentStandardModal/PaymentModal";
+import PaymentModal from "../Modals/PaymentModal/PaymentModal";
 
 // toast style
 const toastStyle = {
@@ -102,6 +102,41 @@ const Subscription = ({ user }) => {
     }
   };
 
+  // delete subscription function if payment is failed
+  const handleDeletePlan = async () => {
+    setIsLoading(true);
+
+    const loadingToast = toast.loading("Canceling plan...", {
+      style: toastStyle,
+    });
+
+    const response = await axios.post("/api/admin/settings/delete-plan", {
+      subscriptionId: user.subscriptionId,
+      customerId: user.customerId,
+    });
+
+    if (response.data === "success") {
+      setIsLoading(false);
+      // show final toast as success
+      toast.success("Plan canceled!", {
+        id: loadingToast,
+        style: toastStyle,
+        iconTheme: successIconTheme,
+      });
+      // refresh props by rerunning getserversideprops
+      router.replace(router.asPath);
+      // close the modal
+      setCancelPlanModal(false);
+    } else {
+      setIsLoading(false);
+      toast.error("An error has occured", {
+        id: loadingToast,
+        style: toastStyle,
+        iconTheme: errorIconTheme,
+      });
+    }
+  };
+
   // function to change cancel at period end for the user
   // which is cancel plan at the next billing period
   // takes in bool which is true false, which will either
@@ -151,6 +186,8 @@ const Subscription = ({ user }) => {
 
   // this function runs when change plan button is pressed
   const handleCheckModal = () => {
+    // if user tries to change plan when payment has failed do nothing
+    if (user.paymentStatus === "failed") return;
     // if the free plan is selected, we open the downgrade to free modal
     if (selectedPlan === 1) {
       setToFreeModal(true);
@@ -257,8 +294,9 @@ const Subscription = ({ user }) => {
   const CancelPlanButton = () => {
     return (
       <button
-        disabled={isLoading}
-        className={styles.cancelBtn}
+        disabled={isLoading || user.plan === "free"}
+        style={{ marginRight: 5 }}
+        className={user.plan === "free" ? styles.disabled : styles.cancelBtn}
         onClick={() => setCancelPlanModal(true)}
       >
         Cancel
@@ -292,7 +330,11 @@ const Subscription = ({ user }) => {
               className={styles.input}
               style={{ cursor: user.cancelAtPeriodEnd ? "default" : "pointer" }}
               onClick={() =>
-                setIsActive(user.cancelAtPeriodEnd ? null : !isActive)
+                setIsActive(
+                  user.cancelAtPeriodEnd || user.paymentStatus === "failed"
+                    ? null
+                    : !isActive
+                )
               }
             >
               {selectedPlan === 1 && (
@@ -361,7 +403,12 @@ const Subscription = ({ user }) => {
               <CancelPlanButton />
             )}
             <button
-              disabled={isLoading || isDisabled || user.cancelAtPeriodEnd}
+              disabled={
+                isLoading ||
+                isDisabled ||
+                user.cancelAtPeriodEnd ||
+                user.paymentStatus === "failed"
+              }
               onClick={() => handleCheckModal()}
               className={
                 isLoading || isDisabled || user.cancelAtPeriodEnd
@@ -379,6 +426,8 @@ const Subscription = ({ user }) => {
         cancelPlanModal={cancelPlanModal}
         handleUpdateCancelAtPeriodEnd={handleUpdateCancelAtPeriodEnd}
         isLoading={isLoading}
+        handleDeletePlan={handleDeletePlan}
+        paymentStatus={user.paymentStatus}
       />
       <RenewPlanModal
         setRenewPlanModal={setRenewPlanModal}
@@ -404,7 +453,7 @@ const Subscription = ({ user }) => {
         isLoading={isLoading}
         handleDowngradePlan={handleDowngradePlan}
       />
-      <PaymentStandardModalProvider
+      <PaymentModal
         setPaymentModal={setPaymentModal}
         paymentModal={paymentModal}
         customerId={user.customerId}

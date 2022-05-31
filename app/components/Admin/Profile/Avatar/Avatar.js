@@ -127,7 +127,7 @@ const Avatar = ({ user }) => {
               <Image
                 src={user.avatar}
                 layout="fill"
-                objectFit="contain"
+                objectFit="cover"
                 objectPosition="center"
               />
             </div>
@@ -137,7 +137,7 @@ const Avatar = ({ user }) => {
               <Image
                 src={defaultAvatar}
                 layout="fill"
-                objectFit="contain"
+                objectFit="cover"
                 objectPosition="center"
               />
             </div>
@@ -148,7 +148,7 @@ const Avatar = ({ user }) => {
                 <Image
                   src={preview}
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                   objectPosition="center"
                 />
               </div>

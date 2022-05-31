@@ -65,6 +65,7 @@ const handler = async (req, res) => {
       subscriptionId: subscription.id,
       cancelAtPeriodEnd: false,
       plan: plan === 2 ? "standard" : "premium",
+      paymentIntent: null,
       paymentStatus: "paid",
       cardDetails: { brand, last4, exp_month, exp_year },
       nextInvoice: subscription.current_period_end,
@@ -74,7 +75,6 @@ const handler = async (req, res) => {
           amount: subscription.plan.amount,
         },
       ],
-      isActive: true,
       resetPasswordLink: null,
     };
 

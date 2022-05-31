@@ -5,6 +5,8 @@ const CancelPlanModal = ({
   cancelPlanModal,
   handleUpdateCancelAtPeriodEnd,
   isLoading,
+  handleDeletePlan,
+  paymentStatus,
 }) => {
   return (
     <div className={cancelPlanModal ? styles.wrapper : styles.hide}>
@@ -26,7 +28,11 @@ const CancelPlanModal = ({
             className={styles.confirmBtn}
             disabled={isLoading}
             style={{ cursor: isLoading ? "default" : "pointer" }}
-            onClick={() => handleUpdateCancelAtPeriodEnd(true)}
+            onClick={() =>
+              paymentStatus === "failed"
+                ? handleDeletePlan()
+                : handleUpdateCancelAtPeriodEnd(true)
+            }
           >
             Confirm
           </button>

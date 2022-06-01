@@ -8,6 +8,7 @@ const PaymentMethod = ({
   paymentStatus,
   cancelAtPeriodEnd,
   customerId,
+  currentInvoice,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -51,6 +52,8 @@ const PaymentMethod = ({
         isActive={isActive}
         setIsActive={setIsActive}
         customerId={customerId}
+        paymentStatus={paymentStatus}
+        currentInvoice={currentInvoice}
       />
       <Toaster />
     </>

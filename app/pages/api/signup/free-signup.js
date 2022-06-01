@@ -38,7 +38,7 @@ const handler = async (req, res) => {
       cancelAtPeriodEnd: false,
       plan: "free",
       paymentStatus: null,
-      paymentIntent: null,
+      currentInvoice: null,
       cardDetails: null,
       nextInvoice: null,
       invoices: null,

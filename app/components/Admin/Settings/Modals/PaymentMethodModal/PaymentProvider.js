@@ -29,7 +29,12 @@ const errorIconTheme = {
   secondary: "#fff",
 };
 
-const PaymentProvider = ({ customerId, setIsActive }) => {
+const PaymentProvider = ({
+  customerId,
+  setIsActive,
+  paymentStatus,
+  currentInvoice,
+}) => {
   const stripe = useStripe();
   const elements = useElements();
   const router = useRouter();
@@ -58,32 +63,61 @@ const PaymentProvider = ({ customerId, setIsActive }) => {
       });
     }
 
-    const response = await axios.post(
-      "/api/admin/settings/add-payment-method",
-      {
+    // make an endpoint the same as the add-payment-method but with the invoices.pay
+    // if payment failed...so we need to attach a new card to the customer and then pay the invoice
+    if (paymentStatus === "failed") {
+      const response = await axios.post("/api/admin/settings/pay-invoice", {
         customerId,
+        currentInvoice,
         paymentMethod: setup.setupIntent.payment_method,
-      }
-    );
+      });
 
-    if (response.data === "success") {
-      toast.success("Payment method added!", {
-        id: loadingToast,
-        style: toastStyle,
-        iconTheme: successIconTheme,
-      });
-      setIsLoading(false);
-      router.replace(router.asPath);
-      setIsActive(false);
+      if (response.data === "success") {
+        toast.success("Payment method added!", {
+          id: loadingToast,
+          style: toastStyle,
+          iconTheme: successIconTheme,
+        });
+        setIsLoading(false);
+        router.replace(router.asPath);
+        setIsActive(false);
+      } else {
+        setIsLoading(false);
+        toast.error("An error has occured", {
+          id: loadingToast,
+          style: toastStyle,
+          iconTheme: errorIconTheme,
+        });
+      }
     } else {
-      setIsLoading(false);
-      toast.error("An error has occured", {
-        id: loadingToast,
-        style: toastStyle,
-        iconTheme: errorIconTheme,
-      });
+      const response = await axios.post(
+        "/api/admin/settings/add-payment-method",
+        {
+          customerId,
+          paymentMethod: setup.setupIntent.payment_method,
+        }
+      );
+
+      if (response.data === "success") {
+        toast.success("Payment method added!", {
+          id: loadingToast,
+          style: toastStyle,
+          iconTheme: successIconTheme,
+        });
+        setIsLoading(false);
+        router.replace(router.asPath);
+        setIsActive(false);
+      } else {
+        setIsLoading(false);
+        toast.error("An error has occured", {
+          id: loadingToast,
+          style: toastStyle,
+          iconTheme: errorIconTheme,
+        });
+      }
     }
   };
+
   return (
     <div className={styles.container}>
       <PaymentElement />

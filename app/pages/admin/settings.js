@@ -36,6 +36,7 @@ export const getServerSideProps = withIronSessionSsr(
           cardDetails: user.cardDetails,
           nextInvoice: user.nextInvoice,
           invoices: user.invoices,
+          currentInvoice: user.currentInvoice,
         },
       },
     };

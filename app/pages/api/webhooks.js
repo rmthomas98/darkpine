@@ -1,9 +1,20 @@
 import clientPromise from "../../lib/mongodb";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const sha256 = require("js-sha256");
 
 const handler = async (req, res) => {
-  // get event
   const event = req.body;
+  // const signature = req.headers["stripe-signature"].split(",")[1].split("=")[1];
+  // const timestamp = req.headers["stripe-signature"].split(",")[0].split("=")[1];
+  // const signed_payload = `${timestamp}.${JSON.stringify(event)}}`;
+
+  // const signingSecret =
+  //   "whsec_cea5cad21d72c5b54ab72936e71d733aa62d2f1ad361434e31edabd433ae4250";
+
+  // const generatedHMAC = sha256.hmac(signingSecret, signed_payload);
+
+  // if (generatedHMAC !== signature)
+  //   return res.status(400).json({ received: true });
 
   // connect to mongodb
   const client = await clientPromise;
@@ -22,7 +33,7 @@ const handler = async (req, res) => {
       $set: {
         paymentStatus: "paid",
         nextInvoice: event.data.object.period_end,
-        paymentIntent: null,
+        currentInvoice: null,
         invoices: [
           ...user.invoices,
           {
@@ -52,7 +63,7 @@ const handler = async (req, res) => {
 
     const updatedCustomer = {
       $set: {
-        paymentIntent: event.data.object.payment_intent,
+        currentInvoice: event.data.object.id,
       },
     };
 
@@ -61,5 +72,4 @@ const handler = async (req, res) => {
 
   res.status(200).json({ received: true });
 };
-
 export default handler;

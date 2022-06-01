@@ -13,6 +13,7 @@ const SettingsContainer = ({ user }) => {
             card={user.cardDetails}
             paymentStatus={user.paymentStatus}
             customerId={user.customerId}
+            currentInvoice={user.currentInvoice}
           />
         )}
       </div>

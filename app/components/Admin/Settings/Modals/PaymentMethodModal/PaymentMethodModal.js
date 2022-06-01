@@ -9,7 +9,13 @@ const stripeLoader = loadStripe(
   "pk_test_51L17SXCujKXJKQzqV23JMtqjDNpoZ4AgslMllIRIQwzw6BPm2oiiMs6H68n35aVCJu5uZftSXcKm6cg1CEjrIc2C00t9C9jAkW"
 );
 
-const PaymentMethodModal = ({ isActive, customerId, setIsActive }) => {
+const PaymentMethodModal = ({
+  isActive,
+  customerId,
+  setIsActive,
+  currentInvoice,
+  paymentStatus,
+}) => {
   const [clientSecret, setClientSecret] = useState();
 
   useEffect(() => {
@@ -62,7 +68,12 @@ const PaymentMethodModal = ({ isActive, customerId, setIsActive }) => {
           charged monthly.
         </p>
         <Elements stripe={stripeLoader} options={options}>
-          <PaymentProvider customerId={customerId} setIsActive={setIsActive} />
+          <PaymentProvider
+            customerId={customerId}
+            setIsActive={setIsActive}
+            paymentStatus={paymentStatus}
+            currentInvoice={currentInvoice}
+          />
         </Elements>
       </div>
     </div>

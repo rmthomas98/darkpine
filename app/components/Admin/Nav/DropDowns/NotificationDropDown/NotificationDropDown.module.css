@@ -62,11 +62,11 @@
   font-size: 65%;
   width: 100%;
   text-align: center;
-  padding: 6px;
+  padding: 4px;
   border-radius: 6px;
   text-decoration: none;
   transition: 300ms;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--shadow);
   color: var(--black);
   background: var(--gray-tint);
 }

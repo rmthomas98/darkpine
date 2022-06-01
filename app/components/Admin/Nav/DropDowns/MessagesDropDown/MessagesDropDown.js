@@ -1,8 +1,7 @@
 import styles from "./MessagesDropDown.module.css";
 import Link from "next/link";
-import { useState } from "react";
 
-const MessagesDropDown = ({ isActive }) => {
+const MessagesDropDown = ({ isActive, setIsActive }) => {
   return (
     <div
       className={`${styles.wrapper} ${isActive ? styles.show : styles.hide}`}
@@ -11,11 +10,13 @@ const MessagesDropDown = ({ isActive }) => {
         <p className={styles.text}>
           You don&#39;t have any messages at this time.
         </p>
-        <div className={styles.btnContainer}>
+        {/* <div className={styles.btnContainer}>
           <Link href="/admin/messages">
-            <a className={styles.viewBtn}>View messages</a>
+            <a className={styles.viewBtn} onClick={() => setIsActive(false)}>
+              View messages
+            </a>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

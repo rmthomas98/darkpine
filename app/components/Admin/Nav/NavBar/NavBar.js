@@ -1,6 +1,6 @@
 import styles from "./NavBar.module.css";
 import { FiSearch } from "react-icons/fi";
-import { BsBellFill, BsEnvelopeFill } from "react-icons/bs";
+import { BiBell, BiChat } from "react-icons/bi";
 import { HiChevronDown } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import AccountDropDown from "../DropDowns/AccountDropDown/AccountDropDown";
@@ -9,6 +9,7 @@ import Image from "next/image";
 import NotificationDropDown from "../DropDowns/NotificationDropDown/NotificationDropDown";
 import MessagesDropDown from "../DropDowns/MessagesDropDown/MessagesDropDown";
 import axios from "axios";
+import Link from "next/link";
 
 const NavBar = () => {
   const [accountMenu, setAccountMenu] = useState(false);
@@ -16,7 +17,6 @@ const NavBar = () => {
   const [messageMenu, setMessageMenu] = useState(false);
 
   const [search, setSearch] = useState("");
-
   const [avatar, setAvatar] = useState();
 
   useEffect(() => {
@@ -45,24 +45,38 @@ const NavBar = () => {
           </div>
         </div>
         <div className={styles.navContainer}>
-          <div
-            className={styles.messageContainer}
-            onMouseEnter={() => setMessageMenu(true)}
-            onMouseLeave={() => setMessageMenu(false)}
-          >
-            <div className={styles.expanse}></div>
-            <BsEnvelopeFill className={styles.message} />
-            <MessagesDropDown isActive={messageMenu} />
-          </div>
-          <div
-            className={styles.bellContainer}
-            onMouseEnter={() => setNotifsMenu(true)}
-            onMouseLeave={() => setNotifsMenu(false)}
-          >
-            <div className={styles.expanse}></div>
-            <BsBellFill className={styles.bell} />
-            <NotificationDropDown isActive={notifsMenu} />
-          </div>
+          <Link href="/admin/messages">
+            <a style={{ cursor: "default" }}>
+              <div
+                className={styles.messageContainer}
+                onMouseEnter={() => setMessageMenu(true)}
+                onMouseLeave={() => setMessageMenu(false)}
+              >
+                <div className={styles.expanse}></div>
+                <BiChat className={styles.message} color="#000" />
+                <MessagesDropDown
+                  isActive={messageMenu}
+                  setIsActive={setMessageMenu}
+                />
+              </div>
+            </a>
+          </Link>
+          <Link href="/admin/notifications">
+            <a style={{ cursor: "default" }}>
+              <div
+                className={styles.bellContainer}
+                onMouseEnter={() => setNotifsMenu(true)}
+                onMouseLeave={() => setNotifsMenu(false)}
+              >
+                <div className={styles.expanse}></div>
+                <BiBell className={styles.bell} color="#000" />
+                <NotificationDropDown
+                  isActive={notifsMenu}
+                  setIsActive={setNotifsMenu}
+                />
+              </div>
+            </a>
+          </Link>
           <div
             className={styles.profileContainer}
             onMouseEnter={() => setAccountMenu(true)}

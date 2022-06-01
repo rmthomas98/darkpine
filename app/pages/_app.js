@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import { useRouter } from "next/router";
 import NavBar from "../components/Admin/Nav/NavBar/NavBar";
 import SideNav from "../components/Admin/Nav/SideNav/SideNav";
+import NextNProgress from "nextjs-progressbar";
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -11,6 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
   if (router.pathname.startsWith("/admin")) {
     return (
       <>
+        <NextNProgress color="#00684a" />
         <div className="dashboard-flex-container">
           <SideNav />
           <div style={{ width: "100%", paddingBottom: 50 }}>

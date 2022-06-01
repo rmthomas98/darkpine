@@ -16,6 +16,18 @@ import {
   BsEnvelopeFill,
   BsFillPersonCheckFill,
 } from "react-icons/bs";
+import {
+  BiCategory,
+  BiFolder,
+  BiShareAlt,
+  BiShield,
+  BiTrashAlt,
+  BiBell,
+  BiChat,
+  BiUserCheck,
+  BiCollection,
+  BiBookmark,
+} from "react-icons/bi";
 
 const SideNav = () => {
   const router = useRouter();
@@ -45,7 +57,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdDashboard style={{ marginRight: 8 }} size={18} />
+              <BiCategory style={{ marginRight: 8 }} size={18} />
               Dashboard
             </a>
           </Link>
@@ -64,13 +76,34 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdFolder style={{ marginRight: 8 }} size={18} />
+              <BiFolder style={{ marginRight: 8 }} size={18} />
               My files
             </a>
           </Link>
           <div
             className={
               router.pathname.endsWith("/my-files") ? styles.filled : styles.bar
+            }
+          ></div>
+        </div>
+        <div className={styles.linkContainer}>
+          <Link href="/admin/bookmarked-files">
+            <a
+              className={
+                router.pathname.endsWith("/bookmarked-files")
+                  ? styles.selectedLink
+                  : styles.link
+              }
+            >
+              <BiBookmark style={{ marginRight: 8 }} size={18} />
+              Bookmarked Files
+            </a>
+          </Link>
+          <div
+            className={
+              router.pathname.endsWith("/bookmarked-files")
+                ? styles.filled
+                : styles.bar
             }
           ></div>
         </div>
@@ -83,8 +116,8 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdPeopleAlt style={{ marginRight: 8 }} size={18} />
-              My shared files
+              <BiShareAlt style={{ marginRight: 8 }} size={18} />
+              Shared files
             </a>
           </Link>
           <div
@@ -95,7 +128,7 @@ const SideNav = () => {
             }
           ></div>
         </div>
-        <div className={styles.linkContainer}>
+        {/* <div className={styles.linkContainer}>
           <Link href="/admin/shared-with-me">
             <a
               className={
@@ -115,7 +148,7 @@ const SideNav = () => {
                 : styles.bar
             }
           ></div>
-        </div>
+        </div>*/}
         <div className={styles.linkContainer}>
           <Link href="/admin/pine-lock">
             <a
@@ -125,8 +158,8 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdShield style={{ marginRight: 8 }} size={18} />
-              Pine lock
+              <BiShield style={{ marginRight: 8 }} size={18} />
+              Pine guard
             </a>
           </Link>
           <div
@@ -146,7 +179,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <MdAutoFixHigh style={{ marginRight: 8 }} size={18} />
+              <BiTrashAlt style={{ marginRight: 8 }} size={18} />
               File recovery
             </a>
           </Link>
@@ -155,6 +188,28 @@ const SideNav = () => {
               router.pathname.endsWith("/file-recovery")
                 ? styles.filled
                 : styles.bar
+            }
+          ></div>
+        </div>
+        <p className={styles.subTitle} style={{ marginTop: 25 }}>
+          MANAGMENT
+        </p>
+        <div className={styles.linkContainer}>
+          <Link href="/admin/notes">
+            <a
+              className={
+                router.pathname.endsWith("/notes")
+                  ? styles.selectedLink
+                  : styles.link
+              }
+            >
+              <BiCollection style={{ marginRight: 8 }} size={18} />
+              Notes
+            </a>
+          </Link>
+          <div
+            className={
+              router.pathname.endsWith("/notes") ? styles.filled : styles.bar
             }
           ></div>
         </div>
@@ -170,7 +225,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <BsBellFill style={{ marginRight: 8 }} size={18} />
+              <BiBell style={{ marginRight: 8 }} size={18} />
               Notifications
             </a>
           </Link>
@@ -191,7 +246,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <BsEnvelopeFill style={{ marginRight: 8 }} size={18} />
+              <BiChat style={{ marginRight: 8 }} size={18} />
               Messages
             </a>
           </Link>
@@ -210,7 +265,7 @@ const SideNav = () => {
                   : styles.link
               }
             >
-              <BsFillPersonCheckFill style={{ marginRight: 8 }} size={18} />
+              <BiUserCheck style={{ marginRight: 8 }} size={18} />
               My Friends
             </a>
           </Link>

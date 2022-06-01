@@ -13,8 +13,10 @@ const AccountDropDown = ({ isActive, setIsActive }) => {
   const router = useRouter();
 
   const handleLogout = async () => {
+
     const response = await axios.get("/api/logout");
-    if (response.data === "success") return router.push("/login");
+
+    if (response.data === 'success' ) return router.push("/login");
     errorMessage();
   };
 

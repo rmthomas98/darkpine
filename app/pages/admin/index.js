@@ -1,5 +1,11 @@
+import DashboardContainer from "../../components/Admin/Dashboard/DashboardContainer/DashboardContainer";
+
 const Index = () => {
-  return <></>;
+  return (
+    <>
+      <DashboardContainer />
+    </>
+  );
 };
 
 export default Index;

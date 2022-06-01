@@ -68,6 +68,22 @@ const handler = async (req, res) => {
     };
 
     await collection.updateOne({ customerId: customer }, updatedCustomer);
+  } else if (event.type === "customer.subscription.deleted") {
+    const customer = event.data.object.customer;
+
+    const updatedCustomer = {
+      $set: {
+        subscriptionId: null,
+        paymentStatus: null,
+        currentInvoice: null,
+        nextInvoice: null,
+        plan: "free",
+        cancelAtPeriodEnd: false,
+        cardDetails: null,
+      },
+    };
+
+    await collection.updateOne({ customerId: customer }, updatedCustomer);
   }
 
   res.status(200).json({ received: true });

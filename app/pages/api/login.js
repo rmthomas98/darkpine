@@ -5,9 +5,11 @@ import { withIronSessionApiRoute } from "iron-session/next";
 export default withIronSessionApiRoute(
   async (req, res) => {
     const { email, password } = req.body;
+
     const client = await clientPromise;
     const db = client.db("darkpine");
     const collection = db.collection("users");
+
     const user = await collection.findOne({ email: email });
     if (!user) return res.status(200).send("user not found");
     bcrypt.compare(password, user.password, async (err, response) => {

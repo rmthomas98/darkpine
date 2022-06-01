@@ -1,0 +1,17 @@
+.container {
+	padding: 20px;
+	border-radius: 10px;
+	background: #fff;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 90%;
+	margin-bottom: 10px;
+}
+
+.progressBarContainer {
+	margin-top: 10px;
+	padding: 10px;
+	height: 10px;
+}

@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
   if (router.pathname.startsWith("/admin")) {
     return (
       <>
-        <NextNProgress color="#00684a" />
+        <NextNProgress />
         <div className="dashboard-flex-container">
           <SideNav />
           <div style={{ width: "100%", paddingBottom: 50 }}>

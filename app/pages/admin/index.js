@@ -1,9 +1,9 @@
-import DashboardContainer from "../../components/Admin/Dashboard/DashboardContainer/DashboardContainer";
+import MyFilesContainer from "../../components/Admin/MyFiles/MyFilesContainer/MyFilesContainer";
 
 const Index = () => {
   return (
     <>
-      <DashboardContainer />
+      <MyFilesContainer />
     </>
   );
 };

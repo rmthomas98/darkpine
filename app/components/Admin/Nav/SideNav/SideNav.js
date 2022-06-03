@@ -48,7 +48,7 @@ const SideNav = () => {
           </a>
         </Link>
         <p className={styles.subTitle}>MAIN</p>
-        <div className={styles.linkContainer}>
+        {/* <div className={styles.linkContainer}>
           <Link href="/admin">
             <a
               className={
@@ -66,12 +66,12 @@ const SideNav = () => {
               router.pathname.endsWith("/admin") ? styles.filled : styles.bar
             }
           ></div>
-        </div>
+        </div> */}
         <div className={styles.linkContainer}>
-          <Link href="/admin/my-files">
+          <Link href="/admin">
             <a
               className={
-                router.pathname.endsWith("/my-files")
+                router.pathname.endsWith("/admin")
                   ? styles.selectedLink
                   : styles.link
               }
@@ -82,7 +82,7 @@ const SideNav = () => {
           </Link>
           <div
             className={
-              router.pathname.endsWith("/my-files") ? styles.filled : styles.bar
+              router.pathname.endsWith("/admin") ? styles.filled : styles.bar
             }
           ></div>
         </div>

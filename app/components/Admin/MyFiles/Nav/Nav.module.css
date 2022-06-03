@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.header {
+  font-weight: 800;
+  font-size: 110%;
+}
+
+.uploadFileBtn {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.uploadFileBtn:hover {
+  background: var(--light-green);
+}

@@ -2,14 +2,16 @@ import styles from "./DashboardContainer.module.css";
 import Storage from "../Storage/Storage";
 
 const DashboardContainer = () => {
-	return (
-		<div className={styles.wrapper}>
-			<div className={styles.container}>
-				<p className={styles.header}>Dashboard</p>
-				<Storage />
-			</div>
-		</div>
-	);
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <Nav />
+        <div className={styles.topFlexContainer}>
+          <Storage />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default DashboardContainer;

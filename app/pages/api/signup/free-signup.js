@@ -19,10 +19,10 @@ const handler = async (req, res) => {
     if (emailInUse) return res.status(200).send("email in use");
 
     // create the customer in stripe
-    const customer = await stripe.customers.create({
-      name: `${first.trim()} ${last.trim()}`,
-      email: email,
-    });
+    // const customer = await stripe.customers.create({
+    //   name: `${first.trim()} ${last.trim()}`,
+    //   email: email,
+    // });
 
     //create the customer in mongodb
     const newCustomer = {
@@ -33,7 +33,7 @@ const handler = async (req, res) => {
       avatar: null,
       notifications: null,
       messages: null,
-      customerId: customer.id,
+      customerId: null,
       subscriptionId: null,
       cancelAtPeriodEnd: false,
       plan: "free",
